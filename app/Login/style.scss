@@ -194,8 +194,8 @@ body{
     color: var(--font-color);
     cursor: pointer;
   } 
-  .Login{
-    position: relative;
-    top: 400px;
-    left: 900px;
-  }
+.Login{
+  position: absolute;
+  top: 50%;
+  left: 45%
+}

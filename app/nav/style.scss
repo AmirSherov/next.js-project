@@ -25,7 +25,7 @@
     }
 }
 .active{
-    transform: translateX(-130px);
+    transform: translateX(-200px);
     transition: 0.1s linear;
 }
 .simple{
@@ -41,6 +41,7 @@
     user-select: none;
     padding-top:30px;
     align-items: center;
+    position: fixed;
     width: 8%;
     left: 0;
     height: 100%;
@@ -66,8 +67,19 @@
             font-weight: 600;
             justify-content: center;
             align-items: center;
+
         }
     }
+    .login , .home{
+        color: white;
+        font-size: 18px;
+        font-family: sans-serif;
+        text-align: center;
+        font-weight: 600;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        }
     .navigation-items{
         display: flex;
         flex-direction: column;

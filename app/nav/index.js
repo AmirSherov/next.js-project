@@ -4,6 +4,7 @@ import { AiOutlineProduct } from "react-icons/ai";
 import { FaBorderAll, FaBasketShopping } from "react-icons/fa6";
 import { IoIosLogIn } from "react-icons/io";
 import { useRef, useState } from "react";
+import Link from "next/link";
 
 export default function Nav() {
     const [open, setOpen] = useState(false);
@@ -34,10 +35,11 @@ export default function Nav() {
                     <span>Python Food</span>
                 </div>
                 <div className="navigation-items">
-                    <div><span>Products</span><span><AiOutlineProduct /></span></div>
+                    <Link className="home" href="/"><div><span> Home</span><span><AiOutlineProduct /></span></div></Link>
                     <div><span>Orders</span><span><FaBorderAll /></span></div>
                     <div><span>Basket</span><span><FaBasketShopping /></span></div>
-                    <div><span>Login</span><span><IoIosLogIn /></span></div>
+                    <Link className="login" href="/Login"><div><span>Login</span><span><IoIosLogIn /></span></div></Link>
+                    
                 </div>
             </div>
         </>
