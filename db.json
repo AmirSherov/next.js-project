@@ -1,0 +1,6 @@
+{
+    "SOM": [
+      { "id": "1", "title": "Phone", "views": 100 },
+      { "id": "2", "title": "another Phone", "views": 200 }
+    ]
+}

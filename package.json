@@ -1,0 +1,21 @@
+{
+  "name": "nextproject",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "json-server": "json-server --watch db.json --port 3001",
+    "serve": "concurrently \"npm run dev\" \"npm run json-server\""
+  },
+  "dependencies": {
+    "concurrently": "^9.0.1",
+    "json-server": "^1.0.0-beta.3",
+    "next": "15.0.1",
+    "react": "19.0.0-rc-69d4b800-20241021",
+    "react-dom": "19.0.0-rc-69d4b800-20241021",
+    "sass": "^1.80.4"
+  }
+}
