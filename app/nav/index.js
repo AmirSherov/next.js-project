@@ -28,7 +28,7 @@ export default function Nav() {
             </div>
             <div
                 ref={nav}
-                className={`navigation-wrapper ${open ? "active" : "simple"}`}
+                className={`navigation-wrapper ${open ? "simple" : "active"}`}
             >
                 <div className="logo-container">
                     <span><img width={60} height={60} src="../images/logo.webp" alt="Logo" /></span>

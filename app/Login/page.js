@@ -1,62 +1,51 @@
+'use client'
 import "./style.scss";
+import { useState } from "react";
 
 export default function Login() {
+    const [isSignup, setIsSignup] = useState(false); // Используем состояние для переключения форм
+
+    const toggleForm = () => {
+        setIsSignup(!isSignup); // Переключаем между входом и регистрацией
+    };
+
     return (
-        <>
-        <div className="Login">
-            <div className="wrapper">
-                <div className="card-switch">
-                    <label className="switch">
-                        <input type="checkbox" className="toggle" />
-                        <span className="slider"></span>
-                        <span className="card-side"></span>
-                        <div className="flip-card__inner">
-                            <div className="flip-card__front">
-                                <div className="title">Log in</div>
-                                <form className="flip-card__form" action="">
-                                    <input
-                                        className="flip-card__input"
-                                        name="email"
-                                        placeholder="Email"
-                                        type="email"
-                                    />
-                                    <input
-                                        className="flip-card__input"
-                                        name="password"
-                                        placeholder="Password"
-                                        type="password"
-                                    />
-                                    <button className="flip-card__btn">Let's go!</button>
-                                </form>
-                            </div>
-                            <div className="flip-card__back">
-                                <div className="title">Sign up</div>
-                                <form className="flip-card__form" action="">
-                                    <input
-                                        className="flip-card__input"
-                                        placeholder="Name"
-                                        type="text"
-                                    />
-                                    <input
-                                        className="flip-card__input"
-                                        name="email"
-                                        placeholder="Email"
-                                        type="email"
-                                    />
-                                    <input
-                                        className="flip-card__input"
-                                        name="password"
-                                        placeholder="Password"
-                                        type="password"
-                                    />
-                                    <button className="flip-card__btn">Confirm!</button>
-                                </form>
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            </div>
-            </div>
-        </>
+        <div className="container">
+            <form className="form">
+                {/* Если isSignup false, показываем форму входа */}
+                {!isSignup && (
+                    <div className="form_front">
+                        <div className="form_details">Login</div>
+                        <input type="text" className="input" placeholder="Username" required />
+                        <input type="password" className="input" placeholder="Password" required />
+                        <button type="submit" className="btn">Login</button>
+                        <span className="switch">
+                            Don't have an account?
+                            <button type="button" className="signup_tog" onClick={toggleForm}>
+                                Sign Up
+                            </button>
+                        </span>
+                    </div>
+                )}
+
+                {/* Если isSignup true, показываем форму регистрации */}
+                {isSignup && (
+                    <div className="form_back">
+                        <div className="form_details">Sign Up</div>
+                        <input type="text" className="input" placeholder="Firstname" required />
+                        <input type="text" className="input" placeholder="Username" required />
+                        <input type="password" className="input" placeholder="Password" required />
+                        <input type="password" className="input" placeholder="Confirm Password" required />
+                        <button type="submit" className="btn">Sign Up</button>
+                        <span className="switch">
+                            Already have an account?
+                            <button type="button" className="signup_tog" onClick={toggleForm}>
+                                Sign In
+                            </button>
+                        </span>
+                    </div>
+                )}
+            </form>
+        </div>
     );
 }

@@ -1,0 +1,28 @@
+.typing-effect {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; // Шрифт для эффекта печати
+    font-size: 40px; // Размер текста
+    white-space: nowrap; // Отключаем перенос строк
+    overflow: hidden; // Скрываем все лишнее
+    position: relative;
+    left: 33%;
+    font-weight: 600;
+    top: 300px;
+    color: white;
+    text-align: center;
+    z-index: 500;
+    width: 450px;
+    .cursor{
+        animation: cursor-blink 0.8s infinite;
+        color: black;
+    }
+
+}
+@keyframes cursor-blink {
+    0%, 100% {
+        opacity: 1; /* Полная видимость */
+    }
+    50% {
+        opacity: 0; /* Полное скрытие */
+    }
+}
+

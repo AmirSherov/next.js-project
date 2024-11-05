@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import "./landing.scss";
+import TypingEffect from "./TypingEffect";
 export default function Home() {
   const imageContainer = useRef(null);
   const images = useRef([]);
@@ -14,6 +15,7 @@ export default function Home() {
       const { top, left } = imageContainer.current.getBoundingClientRect();
       const centerX = left + offsetWidth / 2;
       const centerY = top + offsetHeight / 2;
+
 
       const moveX = ((clientX - centerX) / offsetWidth) * moveAmount;
       const moveY = ((clientY - centerY) / offsetHeight) * moveAmount;
@@ -39,15 +41,17 @@ export default function Home() {
       });
     };
   }, []);
-
+ let welcometext = "Python restourant"
+  
   return (
     <>
       <div className='landing-page-main-container'>
         <div className='landing-page-text'>
-
+          <div className='welcome'>Добро пожаловать в</div>
+            <TypingEffect speed={400} text={welcometext} />
         </div>
         <div className="landing-page-img-container" ref={imageContainer}>
-          <img  className="landing-bg" ref={(el) => (images.current[0] = el)} src="/images/bg.webp" alt="Background" />
+          <img className="landing-bg" ref={(el) => (images.current[0] = el)} src="/images/bg.webp" alt="Background" />
         </div>
       </div>
     </>
