@@ -1,15 +1,76 @@
-.navigation-wrapper{
+.burger{
+    width: 50px;
+    height: 40px;
+    border: 1px solid darkblue;
     display: flex;
-    position: fixed;
-    bottom: 0;
+    padding: 5px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    z-index: 100;
+    position: absolute; 
+    border-radius: 10px;
+    gap: 7px;
+    left: 32px;
+    top: 20px;
+    transition: 0.3s;
+    &:active{
+        transform: scale(0.9);
+    }
+    div{
+        height: 8px;
+        border-radius: 10px;
+        width: 100%;
+        background: linear-gradient(to right, #a656f7, #800080);
+    }
+}
+.active{
+    transform: translateX(-130px);
+    transition: 0.1s linear;
+}
+.simple{
+    transform: translateX(0px);
+    transition: 0.1s linear;
+}
+.navigation-wrapper{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    justify-content: center;
+    user-select: none;
+    padding-top:30px;
+    align-items: center;
+    width: 8%;
     left: 0;
-    height: 70px;
+    height: 100%;
     background-color: rgb(2, 2, 100);
+    .logo-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: -40px;
+        gap: 5px    ;
+        span:nth-child(1){
+            img{
+                border-radius: 50%;
+            }
+        }
+        span{
+            color: white;
+            font-size: 18px;
+            font-family: sans-serif;
+            text-align: center;
+            font-weight: 600;
+            justify-content: center;
+            align-items: center;
+        }
+    }
     .navigation-items{
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
         color: white;
@@ -20,6 +81,18 @@
         div{
             display:  flex;
             gap: 5px;
+            height: 70px;
+            width: 122px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            span{
+                width: 100%;
+                text-align: center;
+            }
+            &:hover{
+                background-color:rgb(3, 3, 77) ;
+            }
         }
     }
 }

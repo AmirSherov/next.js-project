@@ -2,8 +2,8 @@
 import { useEffect, useRef } from 'react';
 import "./landing.scss";
 export default function Home() {
-  const imageContainer = useRef(null); 
-  const images = useRef([]);  
+  const imageContainer = useRef(null);
+  const images = useRef([]);
 
   const moveAmount = 30;
 
@@ -42,8 +42,13 @@ export default function Home() {
 
   return (
     <>
-      <div className="landing-page-img-container" ref={imageContainer}>
-        <img width={100} height={100} className="landing-bg" ref={(el) => (images.current[0] = el)} src="/images/bg.webp" alt="Background" />
+      <div className='landing-page-main-container'>
+        <div className='landing-page-text'>
+
+        </div>
+        <div className="landing-page-img-container" ref={imageContainer}>
+          <img  className="landing-bg" ref={(el) => (images.current[0] = el)} src="/images/bg.webp" alt="Background" />
+        </div>
       </div>
     </>
   );
