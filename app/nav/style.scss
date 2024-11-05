@@ -1,13 +1,22 @@
 .navigation-wrapper{
     display: flex;
-    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
     align-items: center;
-    padding: 0 10px;
+    width: 100%;
+    left: 0;
+    height: 70px;
+    background-color: rgb(2, 2, 100);
     .navigation-items{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        color: white;
+        font-weight: 100;
+        font-size: 20px;
+        font-family: sans-serif;
+        gap: 50px;
         div{
             display:  flex;
             gap: 5px;
