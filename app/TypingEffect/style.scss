@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 .typing-effect {
-    font-family: Playwrite England SemiJoined; // Шрифт для эффекта печати
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
     font-size: 40px; // Размер текста
     white-space: nowrap; // Отключаем перенос строк
     overflow: hidden; // Скрываем все лишнее
     position: relative;
     left: 33%;
     font-weight: 600;
-    top: 300px;
+    top: 200px;
     color: white;
     text-align: center;
     z-index: 500;

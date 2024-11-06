@@ -47,7 +47,7 @@ export default function Home() {
     <>
       <div className='landing-page-main-container'>
         <div className='landing-page-text'>
-          <div className='welcome'>Добро пожаловать в</div>
+          <div className='welcome'>Welocome to</div>
             <TypingEffect speed={400} text={welcometext} />
         </div>
         <div className="landing-page-img-container" ref={imageContainer}>

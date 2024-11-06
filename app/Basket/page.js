@@ -1,0 +1,62 @@
+'use client'
+import { useEffect, useState } from 'react';
+import "./style.scss";
+
+function Basket() {
+    const [basket, setBasket] = useState(null);
+    const [total, setTotal] = useState(0);
+
+    async function getProductsFromDataBase() {
+        const response = await fetch("http://localhost:3002/Basket");
+        const data = await response.json();
+        setBasket(data);
+    }
+
+    useEffect(() => {
+        getProductsFromDataBase();
+    }, []);
+
+    useEffect(() => {
+        if (basket) {
+            const newTotal = basket.reduce((sum, product) => sum + parseInt(product.price), 0);
+            setTotal(newTotal);
+        }
+    }, [basket]);
+
+    return (
+        <>
+            <div className="basket-main-container">
+                <div className="basket-left-side">
+                    {basket ? (
+                        basket.map((product, index) => (
+                            <div key={index} className="product-item">
+                                <h3>{product.name}</h3>
+                                <p>{product.restaurant}</p>
+                                <p>{product.title}</p>
+                                <img width={100} height={100} src={product.imgPath} alt={product.name} />
+                            </div>
+                        ))
+                    ) : (
+                        <p>Loading...</p>
+                    )}
+                </div>
+                <div className="basket-right-side">
+                    <h1>Корзина</h1>
+                    {basket ? (
+                        basket.map((product, index) => (
+                            <div key={index} className="product-item-price">
+                                <span>{product.name}</span>
+                                <span>{product.price}$</span>
+                            </div>
+                        ))
+                    ) : (
+                        <p>Loading....</p>
+                    )}
+                    <h2>Total price: {total}$</h2>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default Basket;

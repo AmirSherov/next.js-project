@@ -1,6 +1,6 @@
 'use client';
 import "./style.scss";
-import { useState, useEffect } from "react";
+import { useState , useEffect } from "react";
 
 export default function Login() {
     const [isSignup, setIsSignup] = useState(false); // Toggle state for switching forms
@@ -45,6 +45,7 @@ export default function Login() {
     }, []); // Empty dependency array to run only once on mount/unmount
 
     return (
+        <>
         <div className="container">
             <link
                 rel="stylesheet"
@@ -93,6 +94,7 @@ export default function Login() {
                 <div className="wave wave2"></div>
                 <div className="wave wave3"></div>
             </section>
-        </div>
+        </div>      
+        </>
     );
 }

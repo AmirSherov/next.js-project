@@ -1,10 +1,10 @@
 
 .container {
-
+overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   background-color: #212121;
 }
 
@@ -18,6 +18,7 @@ body {
   align-items: center;
   transform-style: preserve-3d;
   transition: all 1s ease;
+  z-index: 200;
 }
 
 
@@ -146,7 +147,7 @@ section .wave {
   width: 100%;
   height: 100px;
   background-image: url('wave.png');
-  background-size: 1000px 100px;
+  background-size: 1000px ;
 }
 section  .wave.wave1 {
   animation: animate 30s linear infinite;
@@ -217,4 +218,7 @@ section  .wave.wave3 {
       transform: translateY(100vh) rotate(360deg);
       opacity: 0;
   }
+}
+section{
+  overflow: hidden;
 }

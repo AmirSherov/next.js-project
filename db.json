@@ -1,6 +1,38 @@
 {
-    "SOM": [
-      { "id": "1", "title": "Phone", "views": 100 },
-      { "id": "2", "title": "another Phone", "views": 200 }
-    ]
+  "Products": [
+    {
+      "id": "1",
+      "title": "qwertyop;lkjhgfxcvhjkl;lkjhgvbcnsdnbgfcnmnvjbh",
+      "name" : "Burger",
+      "imgPath": "/images/bg.webp",
+      "restaurant":"Belissimo",
+      "price": "100"
+    },
+    {
+      "id": "2",
+      "title": "qwertyop;lkjhgfxcvhjkl;lkjhgvbcnsdnbgfcnmnvjbh",
+      "name" : "Cheeese burger",
+      "imgPath": "/images/logo.webp",
+      "restaurant":"Choco chango",
+      "price": "150"
+    }
+  ],
+  "Basket": [
+    {
+      "id": "1",
+      "title": "qwertyop;lkjhgfxcvhjkl;lkjhgvbcnsdnbgfcnmnvjbh",
+      "name" : "Burger",
+      "imgPath": "/images/bg.webp",
+      "restaurant":"Belissimo",
+      "price": "100"
+    },
+    {
+      "id": "2",
+      "title": "qwertyop;lkjhgfxcvhjkl;lkjhgvbcnsdnbgfcnmnvjbh",
+      "name" : "Cheeese burger",
+      "imgPath": "/images/logo.webp",
+      "restaurant":"Choco chango",
+      "price": "150"
+    }
+  ]
 }

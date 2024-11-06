@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "json-server": "json-server --watch db.json --port 3002",
-    "serve": "concurrently \"npm run dev\" \"npm run json-server\""
+    "server": "concurrently \"npm run dev\" \"npm run json-server\""
   },
   "dependencies": {
     "concurrently": "^9.0.1",

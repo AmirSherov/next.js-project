@@ -1,18 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 body {
     overflow: hidden;
     background-color: #333;
     padding: 0;
-    margin: 0;
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    user-select: none;
+    font-style: normal;
 }
 .landing-page-main-container {
     .landing-page-text {
         .welcome {
             z-index: 2;
-            font-size: 55px;
+            font-size: 80px;
             display: flex;
             position: relative;
-            left: 33%;
-            top: 260px;
+            left: 30%;
+            top: 160px;
             color: white;
         }
     }
@@ -23,6 +28,7 @@ body {
         position: absolute;
         left: 0;
         top: 0;
+        user-select: none;
 
         .landing-bg {
             width: 100%;
@@ -34,3 +40,5 @@ body {
         }
     }
 }
+
+
