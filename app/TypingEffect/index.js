@@ -26,7 +26,7 @@ const TypingEffect = ({ text, speed = 100 }) => {
     return (
         <div className="typing-effect">
             <span className="text">{displayedText}</span>
-            <span className="cursor">{index < text.length ? "|" : ":)"}</span> {/* Курсор появляется только во время печати */}
+            <span className="cursor">{index < text.length ? "|" : ""}</span> {/* Курсор появляется только во время печати */}
         </div>
     );
 };

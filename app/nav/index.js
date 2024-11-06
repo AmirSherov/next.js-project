@@ -35,11 +35,12 @@ export default function Nav() {
                     <span>Python Food</span>
                 </div>
                 <div className="navigation-items">
-                    <Link className="home" href="/"><div><span> Home</span><span><AiOutlineProduct /></span></div></Link>
+                    <Link className="home" href="/">
+                    <div><span> Home</span><span><AiOutlineProduct /></span> </div></Link>
                     <div><span>Orders</span><span><FaBorderAll /></span></div>
                     <div><span>Basket</span><span><FaBasketShopping /></span></div>
                     <Link className="login" href="/Login"><div><span>Login</span><span><IoIosLogIn /></span></div></Link>
-                    
+
                 </div>
             </div>
         </>
