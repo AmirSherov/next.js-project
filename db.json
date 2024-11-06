@@ -2,7 +2,7 @@
   "Products": [
     {
       "id": "1",
-      "title": "qwertyop;lkjhgfxcvhjkl;lkjhgvbcnsdnbgfcnmnvjbh",
+      "title": "сочный бургер",
       "name" : "Burger",
       "imgPath": "/images/bg.webp",
       "restaurant":"Belissimo",
@@ -10,7 +10,7 @@
     },
     {
       "id": "2",
-      "title": "qwertyop;lkjhgfxcvhjkl;lkjhgvbcnsdnbgfcnmnvjbh",
+      "title": "сочный бургер",
       "name" : "Cheeese burger",
       "imgPath": "/images/logo.webp",
       "restaurant":"Choco chango",
@@ -20,7 +20,7 @@
   "Basket": [
     {
       "id": "1",
-      "title": "qwertyop;lkjhgfxcvhjkl;lkjhgvbcnsdnbgfcnmnvjbh",
+      "title": "сочный бургер",
       "name" : "Burger",
       "imgPath": "/images/bg.webp",
       "restaurant":"Belissimo",
@@ -28,7 +28,7 @@
     },
     {
       "id": "2",
-      "title": "qwertyop;lkjhgfxcvhjkl;lkjhgvbcnsdnbgfcnmnvjbh",
+      "title": "сочный бургер",
       "name" : "Cheeese burger",
       "imgPath": "/images/logo.webp",
       "restaurant":"Choco chango",

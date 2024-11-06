@@ -30,10 +30,15 @@ function Basket() {
                     {basket ? (
                         basket.map((product, index) => (
                             <div key={index} className="product-item">
-                                <h3>{product.name}</h3>
+                               <div>
+                               <h3>{product.name}</h3>
                                 <p>{product.restaurant}</p>
                                 <p>{product.title}</p>
-                                <img width={100} height={100} src={product.imgPath} alt={product.name} />
+                               </div>
+                                <div><img width={150} height={150} src={product.imgPath} alt={product.name} />
+                                <span>{product.price}$</span>
+                                </div>
+                                
                             </div>
                         ))
                     ) : (
@@ -41,7 +46,7 @@ function Basket() {
                     )}
                 </div>
                 <div className="basket-right-side">
-                    <h1>Корзина</h1>
+                    <h1>Basket</h1>
                     {basket ? (
                         basket.map((product, index) => (
                             <div key={index} className="product-item-price">

@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
 body {
-    height: 700px;
     font-family: "Playwrite GB S", cursive;
     font-optical-sizing: auto;
     font-weight: weight;
-    font-style: normal; // Размер текста
-    white-space: nowrap; // Отключаем перенос строк
-    overflow: hidden; // Скрываем все лишнее
+    font-style: normal;
+    user-select: none;
+    white-space: nowrap;
     background-color: #333;
+    padding-top: 50px;
 }
 
 .basket-main-container {
@@ -19,6 +20,9 @@ body {
     gap: 200px;
     width: 100%;
     color: white;
+    margin: 0;
+    height: auto;
+    padding: 0;
 
     .basket-right-side {
         display: flex;
@@ -26,10 +30,22 @@ body {
         justify-content: center;
         align-items: center;
         gap: 40px;
-        background-color:transparent;
-        backdrop-filter: blur(20px);
+        position: sticky;
+        right: 0px;
+        top: 100px;
         border: 2px solid white;
         border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(50px);
+        transition: transform 0.3s ease, backdrop-filter 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            backdrop-filter: blur(60px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
 
         .product-item-price {
             display: flex;
@@ -39,6 +55,55 @@ body {
             gap: 50px;
             width: 300px;
             z-index: 10;
+        }
+    }
+
+    .basket-left-side {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        width: 50%;
+
+        .product-item {
+            height: auto;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(50px);
+            transition: 0.2s ease-in-out;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            div:nth-child(1){
+                display: flex;
+                flex-direction: column;
+                gap: 0px;
+                h3{
+                    font-size: 30px;
+                }
+                }
+                div:nth-child(2){
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    img{
+                      border-radius: 20%;
+                      padding-top: 10px;
+                    }
+            }
+            
+
+            &:hover {
+                transform: scale(1.05);
+                backdrop-filter: blur(60px);
+                background: rgba(255, 255, 255, 0.15);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
         }
     }
 }
