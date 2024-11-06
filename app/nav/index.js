@@ -37,7 +37,7 @@ export default function Nav() {
                 <div className="navigation-items">
                     <Link className="home" href="/">
                     <div><span> Home</span><span><AiOutlineProduct /></span> </div></Link>
-                    <div><span>Orders</span><span><FaBorderAll /></span></div>
+                    <Link className="orders" href="/Orders"><div><span>Orders</span><span><FaBorderAll /></span></div></Link>
                     <Link className="basket" href="/Basket"><div><span>Basket</span><span><FaBasketShopping /></span></div></Link>
                     <Link className="login" href="/Login"><div><span>Login</span><span><IoIosLogIn /></span></div></Link>
 
