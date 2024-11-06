@@ -1,0 +1,37 @@
+.landing-page-item{
+    z-index: 400;
+    width: 300px;
+    padding: 10px;
+    height: 280px;
+    border-radius: 20px;
+    background: rgba(19, 18, 18, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(35px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    flex-direction: column;
+    border: 3px solid #1f1e1e;
+    transition: 0.2s ease-in-out;
+    gap: 20px;
+    &:hover{
+        transform: scale(1.05) translateY(-20px);
+        backdrop-filter: blur(30px);
+        background: rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+ div:nth-child(2){
+    font-size: 30px;
+    color: white;
+    width: 100%;
+
+ }
+ div:nth-child(3){
+    font-size: 15px;
+    color: white;
+    width: 100%;
+    height: auto;
+ }
+}

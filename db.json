@@ -15,6 +15,46 @@
       "imgPath": "/images/logo.webp",
       "restaurant":"Choco chango",
       "price": "150"
+    },
+    {
+      "id": "3",
+      "title": "сочный бургер",
+      "name" : "Burger burger",
+      "imgPath": "/images/logo.webp",
+      "restaurant":"Choco chango",
+      "price": "150"
+    },
+    {
+      "id": "4",
+      "title": "сочный бургер",
+      "name" : "sochniy burger",
+      "imgPath": "/images/logo.webp",
+      "restaurant":"Choco chango",
+      "price": "150"
+    },
+    {
+      "id": "5",
+      "title": "сочный бургер",
+      "name" : "burgur burger",
+      "imgPath": "/images/logo.webp",
+      "restaurant":"Choco chango",
+      "price": "150"
+    },
+    {
+      "id": "6",
+      "title": "сочный бургер",
+      "name" : "burgur burgur",
+      "imgPath": "/images/logo.webp",
+      "restaurant":"Choco chango",
+      "price": "150"
+    },
+    {
+      "id": "7",
+      "title": "сочный бургер",
+      "name" : "burgur burger ll",
+      "imgPath": "/images/logo.webp",
+      "restaurant":"Choco chango",
+      "price": "150"
     }
   ],
   "Basket": [
