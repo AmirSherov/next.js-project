@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "сочный бургер",
-      "name" : "Burger",
+      "name" : "Sezar burger",
       "imgPath": "/images/burgur.png",
       "restaurant":"Belissimo",
       "price": "100"
@@ -11,7 +11,7 @@
     {
       "id": "2",
       "title": "сочный бургер",
-      "name" : "Cheese burger",
+      "name" : "Hamburger burger",
       "imgPath": "/images/burgur.png",
       "restaurant":"Choco chango",
       "price": "150"
@@ -19,7 +19,7 @@
     {
       "id": "3",
       "title": "сочный бургер",
-      "name" : "Burger burger",
+      "name" : "Burger mix",
       "imgPath": "/images/logo.webp",
       "restaurant":"Choco chango",
       "price": "150"
@@ -27,7 +27,7 @@
     {
       "id": "4",
       "title": "сочный бургер",
-      "name" : "sochniy burger",
+      "name" : "Chicken burger",
       "imgPath": "/images/logo.webp",
       "restaurant":"Choco chango",
       "price": "150"
@@ -35,7 +35,7 @@
     {
       "id": "5",
       "title": "сочный бургер",
-      "name" : "burgur burger",
+      "name" : "Hot burger",
       "imgPath": "/images/logo.webp",
       "restaurant":"Choco chango",
       "price": "150"
@@ -43,15 +43,7 @@
     {
       "id": "6",
       "title": "сочный бургер",
-      "name" : "burgur burgur",
-      "imgPath": "/images/logo.webp",
-      "restaurant":"Choco chango",
-      "price": "150"
-    },
-    {
-      "id": "7",
-      "title": "сочный бургер",
-      "name" : "burgur burger ll",
+      "name" : "BBQ burger",
       "imgPath": "/images/logo.webp",
       "restaurant":"Choco chango",
       "price": "150"
@@ -66,7 +58,7 @@
       "restaurant":"Belissimo",
       "price": "100",
       "time": "12:30",
-      "count": "12"
+      "number": "12"
     },
     {
       "id": "2",
