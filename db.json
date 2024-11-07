@@ -3,49 +3,49 @@
     {
       "id": "1",
       "title": "сочный бургер",
-      "name" : "Sezar burger",
+      "name": "Sezar burger",
       "imgPath": "/images/burgur.png",
-      "restaurant":"Belissimo",
+      "restaurant": "Belissimo",
       "price": "100"
     },
     {
       "id": "2",
       "title": "сочный бургер",
-      "name" : "Hamburger burger",
+      "name": "Hamburger burger",
       "imgPath": "/images/burgur.png",
-      "restaurant":"Choco chango",
+      "restaurant": "Choco chango",
       "price": "150"
     },
     {
       "id": "3",
       "title": "сочный бургер",
-      "name" : "Burger mix",
+      "name": "Burger mix",
       "imgPath": "/images/logo.webp",
-      "restaurant":"Choco chango",
+      "restaurant": "Choco chango",
       "price": "150"
     },
     {
       "id": "4",
       "title": "сочный бургер",
-      "name" : "Chicken burger",
+      "name": "Chicken burger",
       "imgPath": "/images/logo.webp",
-      "restaurant":"Choco chango",
+      "restaurant": "Choco chango",
       "price": "150"
     },
     {
       "id": "5",
       "title": "сочный бургер",
-      "name" : "Hot burger",
+      "name": "Hot burger",
       "imgPath": "/images/logo.webp",
-      "restaurant":"Choco chango",
+      "restaurant": "Choco chango",
       "price": "150"
     },
     {
       "id": "6",
       "title": "сочный бургер",
-      "name" : "BBQ burger",
+      "name": "BBQ burger",
       "imgPath": "/images/logo.webp",
-      "restaurant":"Choco chango",
+      "restaurant": "Choco chango",
       "price": "150"
     }
   ],
@@ -53,9 +53,9 @@
     {
       "id": "1",
       "title": "сочный бургер",
-      "name" : "Burger",
+      "name": "Burger",
       "imgPath": "/images/burgur.png",
-      "restaurant":"Belissimo",
+      "restaurant": "Belissimo",
       "price": "100",
       "time": "12:30",
       "number": "12"
@@ -63,12 +63,27 @@
     {
       "id": "2",
       "title": "сочный бургер",
-      "name" : "Cheese burger",
+      "name": "Cheese burger",
       "imgPath": "/images/burgur.png",
-      "restaurant":"Choco chango",
+      "restaurant": "Choco chango",
       "price": "150",
       "time": "12:00",
       "number": "12"
+    }
+  ],
+  "Users": [
+    {
+      "id": "1",
+      "firstname": "admin@gmail.com",
+      "username": "admin",
+      "password": "admin12345"
+    },
+    {
+      "id": 4833,
+      "firstname": "mirzo",
+      "username": "mirzich",
+      "password": "mirzo123",
+      "confirmPassword": "mirzo123"
     }
   ]
 }

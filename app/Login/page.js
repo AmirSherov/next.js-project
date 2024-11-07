@@ -1,100 +1,207 @@
 'use client';
 import "./style.scss";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
+import { toast, Toaster } from "react-hot-toast"
 
 export default function Login() {
-    const [isSignup, setIsSignup] = useState(false); // Toggle state for switching forms
-
-    const toggleForm = () => {
-        setIsSignup(!isSignup); // Toggle between login and signup
-    };
+    const [isSignup, setIsSignup] = useState(false);
+    const [login, setLogin] = useState({
+        firstname: "",
+        username: "",
+        password: ""
+    });
+    const [existingUser, setExistingUser] = useState([]);
+    const [registration, setRegistration] = useState({
+        firstname: "",
+        username: "",
+        password: "",
+        confirmPassword: ""
+    });
 
     useEffect(() => {
-        if (typeof window === "undefined") return; // Ensure this code only runs in the browser
+        getExistingUsersFromDataBase();
+    }, []);
 
-        // Function to create a star element
-        function stars() {
-            const e = document.createElement("div");
-            e.setAttribute("class", "star");
-            document.body.appendChild(e);
+    function loginChange(e) {
+        const { name, value } = e.target;
+        setLogin({ ...login, [name]: value });
+    }
 
-            e.style.left = Math.random() * window.innerWidth + "px";
+    function registrationChange(e) {
+        const { name, value } = e.target;
+        setRegistration({ ...registration, [name]: value });
+    }
 
-            const size = Math.random() * 12;
-            const duration = Math.random() * 3;
-
-            e.style.fontSize = 12 + size + "px";
-            e.style.animationDuration = 3 + duration + "s";
-
-            // Set timeout to remove the star after 5 seconds
+    function handleLogin(e) {
+        e.preventDefault();  // Предотвращаем перезагрузку страницы
+        const user = existingUser.find((user) => user.username === login.username && user.password === login.password);
+        if (user) {
+            toast.success("Login Successful");
             setTimeout(() => {
-                if (document.body.contains(e)) {
-                    document.body.removeChild(e);
-                }
+                window.location.href = "/";
             }, 5000);
+        } else {
+            toast.error("Login Failed");
         }
+    }
 
-        // Set up the interval for creating stars
-        const starInterval = setInterval(stars, 100);
+    function registrationCheck(e) {
+        e.preventDefault();  // Предотвращаем перезагрузку страницы
+        const userExists = existingUser.some((user) => user.username === registration.username);
+        if (userExists) {
+            toast.error("Username already exists");
+        } else if (registration.password !== registration.confirmPassword) {
+            toast.error("Passwords do not match");
+        } else if (registration.username.length <= 5) {
+            toast.error("Username should be more than 5 characters");
+        } else if (registration.password.length <= 5) {
+            toast.error("Password should be more than 5 characters");
+        } else {
+            registerUser();
+        }
+    }
 
-        // Cleanup function to clear interval and remove stars when unmounting
-        return () => {
-            clearInterval(starInterval);
-            document.querySelectorAll(".star").forEach((star) => star.remove());
-        };
-    }, []); // Empty dependency array to run only once on mount/unmount
+    async function registerUser() {
+        const response = await fetch('http://localhost:3002/Users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id: parseInt(Math.random()*10000), ...registration }),
+        });
+        if (response.ok) {
+            toast.success("Registration Successful");
+            setTimeout(() => {
+                window.location.href = "/";
+            }, 5000);
+        } else {
+            toast.error("Registration Failed");
+        }
+    }
+
+    const toggleForm = () => {
+        setIsSignup(!isSignup);
+    };
+
+    function getExistingUsersFromDataBase() {
+        fetch("http://localhost:3002/Users")
+            .then((response) => response.json())
+            .then((data) => setExistingUser(data));
+    }
 
     return (
         <>
-        <div className="container">
-            <link
-                rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-                integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-                crossOrigin="anonymous"
-                referrerPolicy="no-referrer"
+            <Toaster
+                position="top-right"
+                toastOptions={{
+                    duration: 5000,
+                    style: {
+                        background: 'black',
+                        color: 'white',
+                        borderRadius: '8px',
+                        padding: '10px',
+                        fontSize: '16px',
+                    },
+                }}
             />
-            <form className="form">
-                {/* Show login form if isSignup is false */}
-                {!isSignup && (
-                    <div className="form_front">
-                        <div className="form_details">Login</div>
-                        <input type="text" className="input" placeholder="Username" required />
-                        <input type="password" className="input" placeholder="Password" required />
-                        <button type="submit" className="btn">Login</button>
-                        <span className="switch">
-                            Don't have an account?
-                            <button type="button" className="signup_tog" onClick={toggleForm}>
+            <div className="container">
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+                    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+                    crossOrigin="anonymous"
+                    referrerPolicy="no-referrer"
+                />
+                <form className="form">
+                    {!isSignup && (
+                        <div className="form_front">
+                            <div className="form_details">Login</div>
+                            <input
+                                type="text"
+                                className="input"
+                                placeholder="Username"
+                                required
+                                name="username"
+                                onChange={loginChange}
+                            />
+                            <input
+                                type="password"
+                                className="input"
+                                placeholder="Password"
+                                required
+                                name="password"
+                                onChange={loginChange}
+                            />
+                            <button
+                                className="btn"
+                                onClick={handleLogin}
+                            >
+                                Login
+                            </button>
+                            <div className="signup_div">
+                                Don't have an account?{" "}
+                                <span className="signup" onClick={toggleForm}>
+                                    Sign Up
+                                </span>
+                            </div>
+                        </div>
+                    )}
+                    {isSignup && (
+                        <div className="form_back">
+                            <div className="form_details">Sign Up</div>
+                            <input
+                                type="text"
+                                className="input"
+                                placeholder="First Name"
+                                required
+                                name="firstname"
+                                onChange={registrationChange}
+                            />
+                            <input
+                                type="text"
+                                className="input"
+                                placeholder="Username"
+                                required
+                                name="username"
+                                onChange={registrationChange}
+                            />
+                            <input
+                                type="password"
+                                className="input"
+                                placeholder="Password"
+                                required
+                                name="password"
+                                onChange={registrationChange}
+                            />
+                            <input
+                                type="password"
+                                className="input"
+                                placeholder="Confirm Password"
+                                required
+                                name="confirmPassword"
+                                onChange={registrationChange}
+                            />
+                            <button
+                                className="btn"
+                                onClick={registrationCheck}
+                            >
                                 Sign Up
                             </button>
-                        </span>
-                    </div>
-                )}
-
-                {/* Show signup form if isSignup is true */}
-                {isSignup && (
-                    <div className="form_back">
-                        <div className="form_details">Sign Up</div>
-                        <input type="text" className="input" placeholder="Firstname" required />
-                        <input type="text" className="input" placeholder="Username" required />
-                        <input type="password" className="input" placeholder="Password" required />
-                        <input type="password" className="input" placeholder="Confirm Password" required />
-                        <button type="submit" className="btn">Sign Up</button>
-                        <span className="switch">
-                            Already have an account?
-                            <button type="button" className="signup_tog" onClick={toggleForm}>
-                                Sign In
-                            </button>
-                        </span>
-                    </div>
-                )}
-            </form>
-            <section>
-                <div className="wave wave1"></div>
-                <div className="wave wave2"></div>
-                <div className="wave wave3"></div>
-            </section>
-        </div>      
+                            <div className="signup_div">
+                                Already have an account?{" "}
+                                <span className="signup" onClick={toggleForm}>
+                                    Login
+                                </span>
+                            </div>
+                        </div>
+                    )}
+                </form>
+                <section>
+                    <div className="wave wave1"></div>
+                    <div className="wave wave2"></div>
+                    <div className="wave wave3"></div>
+                </section>
+            </div>
         </>
     );
 }
