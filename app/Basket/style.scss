@@ -40,9 +40,13 @@ body {
         backdrop-filter: blur(50px);
         transition: transform 0.3s ease, backdrop-filter 0.3s ease;
 
+        @media (max-width: 950px) {
+            right: 50px;
+        }
+
         &:hover {
-            transform: scale(1.05);
-            backdrop-filter: blur(60px);
+            transform: scale(1.02);
+            overflow: hidden;
             background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
@@ -76,34 +80,70 @@ body {
             justify-content: space-between;
             align-items: center;
             padding: 40px;
-            div:nth-child(1){
+
+            div:nth-child(1) {
                 display: flex;
                 flex-direction: column;
                 gap: 0px;
-                h3{
+
+                h3 {
                     font-size: 30px;
                 }
-                }
-                div:nth-child(2){
-                    display: flex;
-                    flex-direction: column;
-                    text-align: center;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 10px;
-                    img{
-                      border-radius: 20%;
-                      padding-top: 10px;
-                    }
             }
-            
+
+            div:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                img {
+                    border-radius: 20%;
+                    padding-top: 10px;
+                }
+            }
+
 
             &:hover {
                 transform: scale(1.05);
-                backdrop-filter: blur(60px);
                 background: rgba(255, 255, 255, 0.15);
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             }
+        }
+    }
+
+    @media (max-width: 950px) {
+        gap: 100px;
+    }
+
+    @media (max-width: 800px) {
+        margin-top: 100px;
+        gap: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        .basket-left-side {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .basket-right-side {
+            overflow: hidden;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .basket-main-container {
+        margin-top: 10px;
+        .basket-left-side {
+         .product-item{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+         }
         }
     }
 }
