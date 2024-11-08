@@ -10,6 +10,7 @@ overflow: hidden;
 
 body {
   background-color: #212121;
+  max-height: 90vh;
 }
 
 .form {
@@ -207,7 +208,6 @@ section  .wave.wave3 {
 
 .star::before {
   content: '\f005';
-  font-family: FontAwesome;
   text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 50px #fff;
 }
 

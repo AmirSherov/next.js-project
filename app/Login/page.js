@@ -33,7 +33,7 @@ export default function Login() {
     }
 
     function handleLogin(e) {
-        e.preventDefault();  // Предотвращаем перезагрузку страницы
+        e.preventDefault();  
         const user = existingUser.find((user) => user.username === login.username && user.password === login.password);
         if (user) {
             toast.success("Login Successful");
@@ -46,7 +46,7 @@ export default function Login() {
     }
 
     function registrationCheck(e) {
-        e.preventDefault();  // Предотвращаем перезагрузку страницы
+        e.preventDefault(); 
         const userExists = existingUser.some((user) => user.username === registration.username);
         if (userExists) {
             toast.error("Username already exists");
