@@ -1,249 +1,4 @@
-// @import url('htpps://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
-// $background-color: #121212;
-// $text-color: #f5f5f5;
-// $accent-color: #bb86fc;
-// $button-color: #1f1f1f;
-// $button-hover-color: #333333;
-// $price-color: #03dac5;
 
-
-// body {
-//     background-color: #1f1f1f;
-// }
-
-// .details-page-main-container {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     justify-content: center;
-//     gap: 70px;
-//     -webkit-user-select: none;
-//     user-select: none;
-//     min-height: 90vh;
-//     background-color: $background-color;
-//     color: $text-color;
-//     width: 100%;
-//     box-sizing: border-box;
-// }
-
-
-// .details-page-img-container {
-//     margin-bottom: 20px;
-//     width: 400px;
-//     height: 400px;
-
-//     img {
-//         border-radius: 12px;
-//         width: 100%;
-//         height: 100%;
-//         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-//     }
-// }
-
-// .details-page-counter {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     font-size: 1.8rem;
-//     margin: 20px 0;
-//     font-weight: bold;
-//     justify-content: end;
-//     align-items: end;
-//     height: 100%;
-//     margin-top: 350px;
-//     width: auto;
-
-//     div {
-//         cursor: pointer;
-//         width: 40px;
-//         height: 40px;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         border-radius: 8px;
-//         background-color: $button-color;
-//         color: $text-color;
-//         transition: background-color 0.3s, color 0.3s;
-//         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-
-//         &:hover {
-//             background-color: $button-hover-color;
-//             color: $accent-color;
-//         }
-
-//         &:active {
-//             transition: 0.1s;
-//             transform: scale(0.9);
-//         }
-//     }
-
-//     .details-page-counter-count {
-//         margin: 0 15px;
-//         font-size: 1.6rem;
-//         color: $accent-color;
-//     }
-// }
-
-// .details-page-text-container {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: space-between;
-//     gap: 40px;
-//     width: 300px;
-//     height: 400px;
-
-//     div {
-//         margin: 8px 0;
-//         font-size: 1.3rem;
-//         color: $text-color;
-
-//         &:first-child {
-//             font-weight: bold;
-//             font-size: 1.6rem;
-//             color: $accent-color;
-//         }
-
-//         &:nth-child(4) {
-//             font-size: 1.4rem;
-//             font-weight: bold;
-//             color: $price-color;
-//         }
-
-//     }
-// }
-// svg{
-//   display: none;
-// }
-// *, *:before, *:after {
-//   box-sizing: border-box;
-//   margin: 0;
-//   padding: 0;
-// }
-// $openSans: 'Open Sans', Helvetica, Arial, sans-serif;
-// body {
-//   background-color:$background-color;
-//   font-family: $openSans;
-// }
-
-// .buttons { 
-//   text-align: center;
-//   border-radius:30px;
-// }
-
-// $cyan: #0505A9;
-// $dark: #FFFFFF;
-// $borderW: 2px;
-
-// .blob-btn {
-//   $numOfBlobs: 4;
-//   z-index: 1;
-//   border: none;
-//   position: relative;
-//   padding: 14px 25px;
-//   text-align: center;
-//   text-transform: uppercase;
-//   color: white;
-//   font-size: 13px;
-//   font-weight: bold;
-//   background-color: rgba(0, 0, 0, 0);
-//   transition: color 0.5s;
-//   overflow: hidden;
-//   cursor: pointer;
-//   border-radius:30px;
-  
-//   &:before {
-//     content: "";
-//     z-index: 1;
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: 100%;
-//     border-radius:30px;
-//   }
-  
-//   &:after {
-//     content: "";
-//     z-index: -2;
-//     position: absolute;
-//     left: $borderW*1.5;
-//     top: $borderW*1.5;
-//     width: 100%;
-//     height: 100%;
-
-//     transition: all 0.3s 0.2s;
-//     border-radius:30px;
-//   }
-//   &:active{
-//     transform:scale(0.8);
-//       transition:0.1s  ease-in-out;
-//   }
-//   &:hover {
-//     color: black;
-//     border-radius:30px;
-
-    
-//     &:after {
-//       transition: all 0.3s;
-//       left: 0;
-//       top: 0;
-//       border-radius:30px;
-//     }
-//   }
-  
-//   &__inner {
-//     z-index: -1;
-//     overflow: hidden;
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: 100%;
-//     outlet:none;
-    
-//     border-radius:30px;
-//     background: $button-color;
-//   }
-
-//   &__blobs {
-//     position: relative;
-//     display: block;
-//     height: 100%;
-//     filter: url('#goo');
-//   }
-  
-//   &__blob {
-//     position: absolute;
-//     top: $borderW;
-//     width: 100% / $numOfBlobs;
-//     height: 100%;
-//     background: white;
-//     border-radius: 100%;
-//     transform: translate3d(0,150%,0) scale(1.7);
-//     transition: transform 0.45s;
-    
-//     @supports(filter: url('#goo')) {
-//       transform: translate3d(0,150%,0) scale(1.4);
-//     }
-    
-//     @for $i from 1 through $numOfBlobs {
-//       &:nth-child(#{$i}) {
-//         left: ($i - 1) * (120% / $numOfBlobs);
-//         transition-delay: ($i - 1) * 0.08s;
-//       }
-//     }
-    
-//     .blob-btn:hover & {
-//       transform: translateZ(0) scale(1.7);
-      
-//       @supports(filter: url('#goo')) {
-//         transform: translateZ(0) scale(1.4);
-//       }
-//     }
-//   }
-  
-// }
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900'); 
 
 $background-color: #121212;
@@ -375,10 +130,6 @@ body {
   font-family: $openSans;
 }
 
-.buttons { 
-  text-align: center;
-  border-radius: 30px;
-}
 
 $cyan: #0505A9;
 $dark: #FFFFFF;
@@ -389,7 +140,7 @@ $borderW: 2px;
   z-index: 1;
   border: none;
   position: relative;
-  padding: 14px 25px;
+  padding: 20px 20px 30px 20px;
   text-align: center;
   text-transform: uppercase;
   color: white;
@@ -448,8 +199,8 @@ $borderW: 2px;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    outlet: none;
+    height: 50px;
+    outline: none;
     border-radius: 30px;
     background: $button-color;
   }
@@ -491,8 +242,6 @@ $borderW: 2px;
     }
   }
 }
-
-// Media Queries
 
 @media (max-width: 1024px) {
   .details-page-main-container {

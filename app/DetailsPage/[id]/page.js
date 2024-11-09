@@ -10,17 +10,24 @@ function DetailsPage({ params: paramsPromise }) {
     const [product, setProduct] = useState(null);
     const [count, setCount] = useState(1);
     const [isButtonActive, setIsButtonActive] = useState(false);
+    const [userId, setUserId] = useState(null);
+
+    // Проверка userId при каждом обновлении страницы
+    useEffect(() => {
+        const storedUserId = localStorage.getItem("userId");
+        setUserId(storedUserId);
+    }, []);
 
     useEffect(() => {
-        getProductsFromDataBase();
-    }, []);
+        if (userId) getProductsFromDataBase();
+    }, [userId]);
 
     useEffect(() => {
         if (!id) return;
 
         async function fetchProduct() {
             try {
-                const response = await fetch(`http://localhost:3002/Products/${id}`);
+                const response = await fetch(`http://localhost:3000/Products/${id}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch product data");
                 }
@@ -36,9 +43,11 @@ function DetailsPage({ params: paramsPromise }) {
 
     async function getProductsFromDataBase() {
         try {
-            const response = await fetch("http://localhost:3002/Basket");
+            if (!userId) return;
+
+            const response = await fetch(`http://localhost:3000/Users/${userId}`);
             const data = await response.json();
-            setExistingProducts(data);
+            setExistingProducts(data.Basket);
         } catch (error) {
             console.error("Error fetching basket data:", error);
         }
@@ -49,6 +58,11 @@ function DetailsPage({ params: paramsPromise }) {
     }
 
     function checkDataBase() {
+        if (!userId) {
+            toast.error("Please log in to add a product to the basket");
+            return;
+        }
+
         const existingProduct = existingProducts.find((item) => item.name === product.name);
         if (existingProduct) {
             toast.error("The product is already in the basket");
@@ -60,13 +74,13 @@ function DetailsPage({ params: paramsPromise }) {
     function setProductToDataBase() {
         const productWithCount = { ...product, count };
 
-        fetch("http://localhost:3002/Basket", {
-            method: "POST",
+        fetch(`http://localhost:3000/Users/${userId}`, {
+            method: "PATCH",
             headers: {
-                "Content-Type": "application/json",
+              "Content-Type": "application/json",
             },
-            body: JSON.stringify(productWithCount),
-        })
+            body: JSON.stringify({ Basket: [...existingProducts, productWithCount] }),
+          })
             .then((response) => response.json())
             .then(() => {
                 toast.success("The product is successfully added to the basket");
@@ -101,7 +115,7 @@ function DetailsPage({ params: paramsPromise }) {
                     <img width={200} height={120} src={product.imgPath} alt={product.name} />
                 </div>
                 <div className="details-page-counter">
-                    <div onClick={() => setCount(prevCount => Math.max(prevCount + 1, 1))}>+</div>
+                    <div onClick={() => setCount(prevCount => prevCount + 1)}>+</div>
                     <div className="details-page-counter-count">{count}</div>
                     <div onClick={() => setCount(prevCount => Math.max(prevCount - 1, 1))}>-</div>
                 </div>
@@ -110,7 +124,7 @@ function DetailsPage({ params: paramsPromise }) {
                     <div>{product.restaurant}</div>
                     <div>{product.title}</div>
                     <div>{count * product.price}$</div>
-                    <button onClick={() => handleButtonClick()} className="blob-btn">
+                    <button onClick={handleButtonClick} className="blob-btn">
                         Add to Basket
                         <span className="blob-btn__inner">
                             <span className="blob-btn__blobs">
@@ -122,14 +136,14 @@ function DetailsPage({ params: paramsPromise }) {
                         </span>
                     </button>
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <defs>
-                        <filter id="goo">
-                            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
-                            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-                        </filter>
-                    </defs>
-                </svg>
+                        <defs>
+                            <filter id="goo">
+                                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                            </filter>
+                        </defs>
+                    </svg>
                 </div>
             </div>
         </>

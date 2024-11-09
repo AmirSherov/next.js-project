@@ -15,7 +15,9 @@ export default function Login() {
         firstname: "",
         username: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+        Orders: [],
+        Basket: []
     });
 
     useEffect(() => {
@@ -37,6 +39,7 @@ export default function Login() {
         const user = existingUser.find((user) => user.username === login.username && user.password === login.password);
         if (user) {
             toast.success("Login Successful");
+            localStorage.setItem("userId", user.id);
             setTimeout(() => {
                 window.location.href = "/";
             }, 5000);
@@ -62,7 +65,7 @@ export default function Login() {
     }
 
     async function registerUser() {
-        const response = await fetch('http://localhost:3002/Users', {
+        const response = await fetch('http://localhost:3000/Users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -71,9 +74,8 @@ export default function Login() {
         });
         if (response.ok) {
             toast.success("Registration Successful");
-            setTimeout(() => {
-                window.location.href = "/";
-            }, 5000);
+            setIsSignup(false);
+            getExistingUsersFromDataBase();
         } else {
             toast.error("Registration Failed");
         }
@@ -84,7 +86,7 @@ export default function Login() {
     };
 
     function getExistingUsersFromDataBase() {
-        fetch("http://localhost:3002/Users")
+        fetch("http://localhost:3000/Users")
             .then((response) => response.json())
             .then((data) => setExistingUser(data));
     }

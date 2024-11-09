@@ -7,10 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json-server": "json-server --watch db.json --port 3002",
+    "json-server": "json-server --watch db.json --port 3000",
     "server": "concurrently \"npm run dev\" \"npm run json-server\""
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.46.1",
     "concurrently": "^9.0.1",
     "json-server": "^1.0.0-beta.3",
     "next": "15.0.1",

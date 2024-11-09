@@ -10,7 +10,7 @@ export default function Home() {
   const images = useRef([]);
   const moveAmount = 15;
   async function getProductsFromDataBase() {
-    const response = await fetch("http://localhost:3002/Products");
+    const response = await fetch("http://localhost:3000/Products");
     const data = await response.json();
     setProducts(data);
   }
@@ -35,7 +35,7 @@ export default function Home() {
 
     container.addEventListener('mouseleave', () => {
       images.current.forEach((image) => {
-        image.style.transform = `translate(0, 0)`;
+        image.style.transform = 'translate(0, 0)';
       });
     });
 
@@ -43,7 +43,7 @@ export default function Home() {
       container.removeEventListener('mousemove', handleMovement);
       container.removeEventListener('mouseleave', () => {
         images.current.forEach((image) => {
-          image.style.transform = `translate(0, 0)`;
+          image.style.transform = 'translate(0, 0)';
         });
       });
     };

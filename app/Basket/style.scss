@@ -17,7 +17,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 200px;
+    gap: 100px;
     width: 100%;
     color: white;
     margin: 0;
@@ -30,26 +30,31 @@ body {
         justify-content: center;
         align-items: center;
         gap: 40px;
-        position: sticky;
-        right: 0px;
+        position: fixed;
+        right: 20px;
         top: 0px;
         height: 100%;
+        &::-webkit-scrollbar {
+            color: red;
+        }
+        overflow-y: scroll;
         border: 2px solid white;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.1);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(50px);
         transition: transform 0.3s ease, backdrop-filter 0.3s ease;
-
+        .basket-scroll{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
         @media (max-width: 950px) {
             right: 50px;
-        }
-
-        &:hover {
-            transform: scale(1.02);
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .product-item-price {
@@ -66,10 +71,12 @@ body {
     .basket-left-side {
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 100px;
         width: 50%;
+        margin-right: 300px;
 
-        .product-item {
+
+        .product-item-basket {
             height: auto;
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.1);
@@ -85,7 +92,7 @@ body {
             div:nth-child(1) {
                 display: flex;
                 flex-direction: column;
-                gap: 0px;
+                gap: 30px;
 
                 h3 {
                     font-size: 30px;
@@ -132,6 +139,7 @@ body {
 
         .basket-right-side {
             overflow: hidden;
+            position: sticky;
         }
     }
 }
@@ -140,10 +148,15 @@ body {
     .basket-main-container {
         margin-top: 10px;
         .basket-left-side {
-         .product-item{
+         .product-item-basket{
             display: flex;
             flex-direction: column;
             gap: 30px;
+            div:nth-child(1){
+                h3{
+                    font-size: 20px;
+                }
+            }
          }
         }
     }
