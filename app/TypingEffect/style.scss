@@ -4,9 +4,9 @@
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
-    font-size: 40px; // Размер текста
-    white-space: nowrap; // Отключаем перенос строк
-    overflow: hidden; // Скрываем все лишнее
+    font-size: 40px;
+    white-space: nowrap;
+    overflow: hidden; 
     position: relative;
     left: 33%;
     font-weight: 600;
@@ -15,6 +15,7 @@
     text-align: center;
     z-index: 500;
     width: 450px;
+    height: auto;
     .cursor{
         animation: cursor-blink 0.8s infinite;
         color: black;
@@ -44,10 +45,10 @@
 }
 @keyframes cursor-blink {
     0%, 100% {
-        opacity: 1; /* Полная видимость */
+        opacity: 1; 
     }
     50% {
-        opacity: 0; /* Полное скрытие */
+        opacity: 0;
     }
 }
 

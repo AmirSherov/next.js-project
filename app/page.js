@@ -3,13 +3,12 @@ import { useEffect, useRef, useState } from 'react';
 import "./landing.scss";
 import LandingItems from './LandingPageItems';
 import TypingEffect from "./TypingEffect";
+
 export default function Home() {
   const [products, setProducts] = useState([]); 
   const imageContainer = useRef(null);
   const images = useRef([]);
-
   const moveAmount = 15;
-
   async function getProductsFromDataBase() {
     const response = await fetch("http://localhost:3002/Products");
     const data = await response.json();
@@ -57,7 +56,7 @@ export default function Home() {
       <div className='landing-page-main-container'>
         <div className='landing-page-text'>
           <div className='welcome'>Welcome to</div>
-          <TypingEffect speed={400} text={welcometext} />
+          <TypingEffect speed={250} text={welcometext} />
         </div>
         <div className="landing-page-img-container" ref={imageContainer}>
           <img className="landing-bg" ref={(el) => (images.current[0] = el)} src="/images/bg.webp" alt="Background" />

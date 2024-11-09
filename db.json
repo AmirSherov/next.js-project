@@ -87,6 +87,33 @@
       "restaurant": "Choco chango",
       "price": 140,
       "count": 3
+    },
+    {
+      "id": "2",
+      "title": "сочный бургер",
+      "name": "Hamburger burger",
+      "imgPath": "/images/burgur.png",
+      "restaurant": "Choco chango",
+      "price": 150,
+      "count": 1
+    },
+    {
+      "id": "4",
+      "title": "сочный бургер",
+      "name": "Chicken burger",
+      "imgPath": "/images/logo.webp",
+      "restaurant": "Choco chango",
+      "price": 150,
+      "count": 1
+    },
+    {
+      "id": "6",
+      "title": "сочный бургер",
+      "name": "BBQ burger",
+      "imgPath": "/images/logo.webp",
+      "restaurant": "Choco chango",
+      "price": 230,
+      "count": 1
     }
   ],
   "Users": [
@@ -101,7 +128,17 @@
       "firstname": "mirzo",
       "username": "mirzich",
       "password": "mirzo123",
-      "confirmPassword": "mirzo123"
+      "confirmPassword": "mirzo123",
+      "Basket": [
+        {
+          "id": "1",
+          "title": "сочный бургер",
+          "name": "Burger",
+          "imgPath": "/images/burgur.png",
+          "restaurant": "Belissimo",
+          "price": 100
+        }
+      ]
     }
   ]
 }

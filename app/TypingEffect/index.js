@@ -1,32 +1,32 @@
-'use client'; // Обязательно для клиентских компонентов
+'use client'; 
 import { useEffect, useState } from 'react';
-import './style.scss'; // Стили для эффекта печати
+import './style.scss';
 
-const TypingEffect = ({ text, speed = 100 }) => {
-    const [displayedText, setDisplayedText] = useState(""); // Текст для отображения
-    const [index, setIndex] = useState(0); // Текущий индекс символа
+const TypingEffect = ({ text, speed = 200 }) => {
+    const [displayedText, setDisplayedText] = useState(""); 
+    const [index, setIndex] = useState(0);
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             if (index < text.length) {
-                setDisplayedText((prev) => prev + text.charAt(index)); // Добавляем символ
-                setIndex((prev) => prev + 1); // Увеличиваем индекс
+                setDisplayedText((prev) => prev + text.charAt(index));
+                setIndex((prev) => prev + 1); 
             } else {
-                // Завершаем печать, делаем паузу и сбрасываем
+             
                 setTimeout(() => {
-                    setDisplayedText(""); // Сбрасываем текст
-                setIndex(0); // Сбрасываем индекс
+                    setDisplayedText(""); 
+                setIndex(0);
                 } ,2000)
             }
-        }, speed); // Задержка между печатью символов
+        }, speed); 
 
-        return () => clearTimeout(timeoutId); // Очищаем таймер при размонтировании
-    }, [index, text, speed]); // Запускаем эффект, если изменился индекс или текст
+        return () => clearTimeout(timeoutId); 
+    }, [index, text, speed]); 
 
     return (
         <div className="typing-effect">
             <span className="text">{displayedText}</span>
-            <span className="cursor">{index < text.length ? "|" : ""}</span> {/* Курсор появляется только во время печати */}
+            <span className="cursor">{index < text.length ? "|" : ""}</span> 
         </div>
     );
 };

@@ -29,7 +29,7 @@ function Basket() {
                             <img width={340} height={340} src={product.imgPath} alt={product.name}  className='image'/>
                             <span className='price'>{product.price}$</span>
                             <span className='time'>{product.time}</span>
-                            <span className='count'>Count-{product.number}</span>
+                            <span className='count'>Count-{product.count}</span>
                         </div>
                     </div>
                 ))}
