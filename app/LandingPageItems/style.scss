@@ -56,7 +56,7 @@
    }
    @media (max-width:600px){
       width: 300px;
-      height: 280px;
+      height: 370px;
       div:nth-child(1) {
          width: 200px;
          height: 200px;
@@ -68,7 +68,7 @@
       @media (max-width:400px){
          width: 250px;
          gap: 10px;
-         height: 280px;
+         height: 340px;
          div:nth-child(1) {
             width: 200px;
             height: 270px;
@@ -108,11 +108,11 @@ svg{
    z-index: 1;
    border:3px solid white;
    position: relative;
-   padding: 20px 46px;
+   padding: 14px 25px;
    text-align: center;
    text-transform: uppercase;
    color: white;
-   font-size: 16px;
+   font-size: 13px;
    font-weight: bold;
    background-color: transparent;
    transition: color 0.5s;
@@ -170,7 +170,7 @@ svg{
      outlet:none;
      
      border-radius:30px;
-     background:black;
+     background:#333;
    }
    
    // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter

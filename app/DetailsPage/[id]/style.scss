@@ -1,0 +1,282 @@
+@import url('htpps://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+$background-color: #121212;
+$text-color: #f5f5f5;
+$accent-color: #bb86fc;
+$button-color: #1f1f1f;
+$button-hover-color: #333333;
+$price-color: #03dac5;
+
+
+body {
+    background-color: #1f1f1f;
+}
+
+.details-page-main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    -webkit-user-select: none;
+    user-select: none;
+    min-height: 90vh;
+    background-color: $background-color;
+    color: $text-color;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.details-page-img-container {
+    margin-bottom: 20px;
+    width: 400px;
+    height: 400px;
+
+    img {
+        border-radius: 12px;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.details-page-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 20px 0;
+    font-weight: bold;
+    justify-content: end;
+    align-items: end;
+    height: 100%;
+    margin-top: 350px;
+    width: auto;
+
+    div {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background-color: $button-color;
+        color: $text-color;
+        transition: background-color 0.3s, color 0.3s;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+
+        &:hover {
+            background-color: $button-hover-color;
+            color: $accent-color;
+        }
+
+        &:active {
+            transition: 0.1s;
+            transform: scale(0.9);
+        }
+    }
+
+    .details-page-counter-count {
+        margin: 0 15px;
+        font-size: 1.6rem;
+        color: $accent-color;
+    }
+}
+
+.details-page-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 300px;
+    height: 400px;
+
+    div {
+        margin: 8px 0;
+        font-size: 1.3rem;
+        color: $text-color;
+
+        &:first-child {
+            font-weight: bold;
+            font-size: 1.6rem;
+            color: $accent-color;
+        }
+
+        &:nth-child(4) {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: $price-color;
+        }
+
+    }
+}
+.cta {
+    width: 160px;
+    height: 60px;
+    background: #fa5454;
+    cursor:pointer;
+    border-radius: 25px;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    transition: 0.2s ease-in-out;
+  }
+  
+  button a {
+    color: #fff;
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+  
+  /* let's shape */
+  button span.shape {
+    height: 60px;
+    width: 160px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  button span span {
+    content:"";
+    position: absolute;
+    margin: auto;
+    height: 8px;
+    width: 2px;
+    background: #E6203B;
+    opacity: 0;
+  }
+  
+  button span span:nth-of-type(1) {
+    top: -20px;
+    left: 0;
+    right: 0;
+  }
+  
+  button span span:nth-of-type(2) {
+    bottom: -20px;
+    left: 0;
+    right: 0;
+  }
+  
+  button span span:nth-of-type(3) {
+    top:0;
+    bottom: 0;
+    left: -10px;
+  }
+  
+  button span span:nth-of-type(4) {
+    top:0;
+    bottom: 0;
+    right: -10px;
+  }
+  
+  button span span:nth-of-type(5) {
+    top: -20px;
+    left: -70%;
+    right: 0;
+    transform:rotate(-30deg);
+  }
+  
+  button span span:nth-of-type(6) {
+    top: -20px;
+    left: 0;
+    right: -70%;
+    transform:rotate(30deg);
+  }
+  
+  button span span:nth-of-type(7) {
+    bottom: -20px;
+    right: 0;
+    left: -70%;
+    transform:rotate(30deg);
+  }
+  
+  button span span:nth-of-type(8) {
+    bottom: -20px;
+    left: 0;
+    right: -70%;
+    transform:rotate(-30deg);
+  }
+  
+  /* let's animate this */
+  @keyframes bounce {
+    0%{transition:0.2s;transform: scale(1);}
+    50%{transition:0.2s;transform: scale(0.96);}
+    100%{transition:0.2s;transform: scale(1);}
+  }
+  
+  button.active {
+    animation: bounce 0.3s ease-out 1;
+  }
+  
+  button.active span span:nth-of-type(1) {
+    animation: anim1 0.4s ease-out 1;
+  }
+  button.active span span:nth-of-type(2) {
+    animation: anim2 0.4s ease-out 1;
+  }
+  button.active span span:nth-of-type(3) {
+    animation: anim3 0.4s ease-out 1;
+  }
+  button.active span span:nth-of-type(4) {
+    animation: anim4 0.4s ease-out 1;
+  }
+  button.active span span:nth-of-type(5) {
+    animation: anim5 0.4s ease-out 1;
+  }
+  button.active span span:nth-of-type(6) {
+    animation: anim6 0.4s ease-out 1;
+  }
+  button.active span span:nth-of-type(7) {
+    animation: anim7 0.4s ease-out 1;
+  }
+  button.active span span:nth-of-type(8) {
+    animation: anim8 0.4s ease-out 1;
+  }
+  
+  @keyframes anim1 {
+    0%{transform: scaleY(0.5);opacity: 0;}
+    50%{transform: translateY(-10px) scaleY(1.4); opacity: 1;}
+    100%{transform: translateY(-20px) scaleY(0.5);opacity: 0;}
+  }
+  @keyframes anim2 {
+    0%{transform: scaleY(1);opacity: 0;}
+    50%{transform: translateY(10px) scaleY(1.4); opacity: 1;}
+    100%{transform: translateY(20px) scaleY(0.5);opacity: 0;}
+  }
+  @keyframes anim3 {
+    0%{transform: rotate(90deg) scaleX(0.5);opacity: 0;}
+    50%{transform: rotate(90deg) translateY(10px) scaleX(1.4); opacity: 1;}
+    100%{transform: rotate(90deg) translateY(20px) scaleX(0.5);opacity: 0;}
+  }
+  @keyframes anim4 {
+    0%{transform: rotate(90deg) scaleX(0.5);opacity: 0;}
+    50%{transform: rotate(90deg) translateY(-10px) scaleX(1.4); opacity: 1;}
+    100%{transform: rotate(90deg) translateY(-20px) scaleX(0.5);opacity: 0;}
+  }
+  @keyframes anim5 {
+    0%{transform: rotate(-30deg) scaleY(0.5);opacity: 0;}
+    50%{transform: rotate(-30deg) translateY(-8px) scaleY(1.4); opacity: 1;}
+    100%{transform: rotate(-30deg) translateY(-16px) scaleY(0.5);opacity: 0;}
+  }
+  @keyframes anim6 {
+    0%{transform: rotate(30deg) scaleY(0.5);opacity: 0;}
+    50%{transform: rotate(30deg) translateY(-8px) scaleY(1.4); opacity: 1;}
+    100%{transform: rotate(30deg) translateY(-16px) scaleY(0.5);opacity: 0;}
+  }
+  @keyframes anim7 {
+    0%{transform: rotate(30deg) scaleY(0.5);opacity: 0;}
+    50%{transform: rotate(30deg) translateY(8px) scaleY(1.4); opacity: 1;}
+    100%{transform: rotate(30deg) translateY(16px) scaleY(0.5);opacity: 0;}
+  }
+  @keyframes anim8 {
+    0%{transform: rotate(-30deg) scaleY(0.5);opacity: 0;}
+    50%{transform: rotate(-30deg) translateY(8px) scaleY(1.4); opacity: 1;}
+    100%{transform: rotate(-30deg) translateY(16px) scaleY(0.5);opacity: 0;}
+  }

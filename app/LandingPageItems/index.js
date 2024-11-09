@@ -1,6 +1,15 @@
+import { useRouter } from 'next/navigation';
 import "./style.scss";
 
-function LandingPageItems({ image, name, restaurant }) {
+function LandingPageItems({ id, image, name, restaurant }) {
+    const router = useRouter();
+
+    const handleOrderClick = () => {
+        if (router) {
+            router.push(`/DetailsPage/${id}`);
+        }
+    };
+
     return (
         <>
             <div className="landing-page-item">
@@ -9,9 +18,9 @@ function LandingPageItems({ image, name, restaurant }) {
                 </div>
                 <div>{name}</div>
                 <div>{restaurant}</div>
-                <div className="buttons">
+                <div onClick={handleOrderClick} className="buttons">
                     <button className="blob-btn">
-                        Order
+                        Details
                         <span className="blob-btn__inner">
                             <span className="blob-btn__blobs">
                                 <span className="blob-btn__blob"></span>
@@ -22,17 +31,17 @@ function LandingPageItems({ image, name, restaurant }) {
                         </span>
                     </button>
                 </div>
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-            <defs>
-                <filter id="goo">
-                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
-                    <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-                </filter>
-            </defs>
-        </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                        </filter>
+                    </defs>
+                </svg>
             </div>
-            </>
+        </>
     );
 }
 

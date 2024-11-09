@@ -70,6 +70,7 @@ export default function Home() {
               image={product.imgPath}
               name={product.name}
               restaurant={product.restaurant}
+              id = {product.id}
             />
           ))
         ) : (

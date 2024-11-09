@@ -18,7 +18,7 @@ function Basket() {
 
     useEffect(() => {
         if (basket) {
-            const newTotal = basket.reduce((sum, product) => sum + parseInt(product.price), 0);
+            const newTotal = basket.reduce((sum, product) => sum + parseInt(product.price * product.count), 0);
             setTotal(newTotal);
         }
     }, [basket]);
@@ -36,7 +36,7 @@ function Basket() {
                                 <p>{product.title}</p>
                                </div>
                                 <div><img width={150} height={150} src={product.imgPath} alt={product.name} />
-                                <span>{product.price}$</span>
+                                <span>{product.price }$</span>
                                 </div>
                                 
                             </div>
@@ -50,8 +50,8 @@ function Basket() {
                     {basket ? (
                         basket.map((product, index) => (
                             <div key={index} className="product-item-price">
-                                <span>{product.name}</span>
-                                <span>{product.price}$</span>
+                                <span>{product.name} x {product.count}</span>
+                                <span>{product.price * product.count}$</span>
                             </div>
                         ))
                     ) : (

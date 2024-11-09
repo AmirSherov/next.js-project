@@ -20,8 +20,13 @@ body {
             font-size: 80px;
             display: flex;
             position: absolute;
-            left: 30%;
+            left: 32%;
             top: 120px;
+            font-family: "Playwrite GB S", cursive;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            user-select: none;
+            font-style: normal;
             color: white;
             @media (max-width:700px){
                 left: 170px;
@@ -119,7 +124,7 @@ body {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            padding-left: 30px;
+            padding-left:75px;
         }
     }
 }
