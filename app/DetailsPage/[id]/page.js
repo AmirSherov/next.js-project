@@ -12,7 +12,6 @@ function DetailsPage({ params: paramsPromise }) {
     const [isButtonActive, setIsButtonActive] = useState(false);
     const [userId, setUserId] = useState(null);
 
-    // Проверка userId при каждом обновлении страницы
     useEffect(() => {
         const storedUserId = localStorage.getItem("userId");
         setUserId(storedUserId);
@@ -27,7 +26,7 @@ function DetailsPage({ params: paramsPromise }) {
 
         async function fetchProduct() {
             try {
-                const response = await fetch(`http://localhost:3000/Products/${id}`);
+                const response = await fetch(`http://localhost:3000/DetailsProducts/${id}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch product data");
                 }
@@ -86,7 +85,7 @@ function DetailsPage({ params: paramsPromise }) {
                 toast.success("The product is successfully added to the basket");
                 getProductsFromDataBase(); 
             })
-            .catch((error) => console.error("Error adding product to basket:", error));
+            .catch((error) => toast.error("Error adding product to the basket" , error));
     }
 
     const handleButtonClick = () => {
@@ -94,7 +93,7 @@ function DetailsPage({ params: paramsPromise }) {
         checkDataBase(); 
         setTimeout(() => setIsButtonActive(false), 300);
     };
-
+console.log(product.id)
     return (
         <>
             <Toaster

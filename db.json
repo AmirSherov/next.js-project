@@ -49,134 +49,139 @@
       "price": 230
     }
   ],
+  "DetailsProducts": [
+    {
+      "id": "1",
+      "title": "сочный бургер",
+      "name": "Sezar burger",
+      "imgPath": "/images/burgur.png",
+      "restaurant": "Belissimo",
+      "price": 100
+    },
+    {
+      "id": "2",
+      "title": "сочный бургер",
+      "name": "Hamburger burger",
+      "imgPath": "/images/burgur.png",
+      "restaurant": "Choco chango",
+      "price": 150
+    },
+    {
+      "id": "3",
+      "title": "сочный бургер",
+      "name": "Burger mix",
+      "imgPath": "/images/logo.webp",
+      "restaurant": "Choco chango",
+      "price": 150
+    },
+    {
+      "id": "4",
+      "title": "сочный бургер",
+      "name": "Chicken burger",
+      "imgPath": "/images/logo.webp",
+      "restaurant": "Choco chango",
+      "price": 150
+    },
+    {
+      "id": "5",
+      "title": "сочный бургер",
+      "name": "Hot burger",
+      "imgPath": "/images/logo.webp",
+      "restaurant": "Choco chango",
+      "price": 140
+    },
+    {
+      "id": "6",
+      "title": "сочный бургер",
+      "name": "BBQ burger",
+      "imgPath": "/images/logo.webp",
+      "restaurant": "Choco chango",
+      "price": 230
+    },
+    {
+      "id": "7",
+      "title": "сочный burgur",
+      "name": "BBQ burger",
+      "imgPath": "http://localhost:3001/burgu2.png",
+      "restaurant": "Choco chango",
+      "price": 230
+    },
+    {
+      "id": "8",
+      "title": "сочный burgur burgur",
+      "name": "BBQ burger gg",
+      "imgPath": "http://localhost:3001/burgur3.png",
+      "restaurant": "Choco chango",
+      "price": 230
+    },
+    {
+      "id": "9",
+      "title": "сочный burgur burgur",
+      "name": "BBQ burger burgur burgur",
+      "imgPath": "http://localhost:3001/burgur4.png",
+      "restaurant": "Choco chaca",
+      "price": 250
+    },
+    {
+      "id": "10",
+      "title": "сочный mix burgur mix",
+      "name": "BBQ burgermack burgur",
+      "imgPath": "http://localhost:3001/burgur4.png",
+      "restaurant": "Choco total oil",
+      "price": 190
+    }
+  ],
+  "NewProducts": [
+    {
+      "id": "7",
+      "title": "сочный burgur",
+      "name": "BBQ burger",
+      "imgPath": "burgu2.png",
+      "restaurant": "Choco chango",
+      "price": 230
+    },
+    {
+      "id": "8",
+      "title": "сочный burgur burgur",
+      "name": "BBQ burger gg",
+      "imgPath": "burgur3.png",
+      "restaurant": "Choco chango",
+      "price": 400
+    },
+    {
+      "id": "9",
+      "title": "сочный burgur burgur",
+      "name": "BBQ burger burgur burgur",
+      "imgPath": "burgur4.png",
+      "restaurant": "Choco chaca",
+      "price": 250
+    },
+    {
+      "id": "10",
+      "title": "сочный mix burgur mix",
+      "name": "BBQ burgermack burgur",
+      "imgPath": "http://localhost:3001/burgur5.png",
+      "restaurant": "Choco total oil",
+      "price": 190
+    }
+  ],
   "Users": [
     {
       "id": "1",
-      "firstname": "admin@gmail.com",
+      "email": "admin@gmail.com",
       "username": "admin",
       "password": "admin12345",
       "Orders": [],
-      "Basket": [
-        {
-          "id": "1",
-          "title": "сочный бургер",
-          "name": "Hamburger burger",
-          "imgPath": "/images/burgur.png",
-          "restaurant": "Choco chango",
-          "price": 150,
-          "count": 1
-        },
-        {
-          "id": "2",
-          "title": "сочный бургер",
-          "name": "Hamburger burger",
-          "imgPath": "/images/burgur.png",
-          "restaurant": "Choco chango",
-          "price": 150,
-          "count": 3
-        },
-        {
-          "id": "6",
-          "title": "сочный бургер",
-          "name": "BBQ burger",
-          "imgPath": "/images/logo.webp",
-          "restaurant": "Choco chango",
-          "price": 230,
-          "count": 1
-        },
-        {
-          "id": "5",
-          "title": "сочный бургер",
-          "name": "Hot burger",
-          "imgPath": "/images/logo.webp",
-          "restaurant": "Choco chango",
-          "price": 140,
-          "count": 4
-        },
-        {
-          "id": "4",
-          "title": "сочный бургер",
-          "name": "Chicken burger",
-          "imgPath": "/images/logo.webp",
-          "restaurant": "Choco chango",
-          "price": 150,
-          "count": 5
-        },
-        {
-          "id": "3",
-          "title": "сочный бургер",
-          "name": "Burger mix",
-          "imgPath": "/images/logo.webp",
-          "restaurant": "Choco chango",
-          "price": 150,
-          "count": 8
-        }
-      ]
+      "Basket": []
     },
     {
       "id": "789",
-      "firstname": "Amirrr",
+      "email": "Amirrr@gmail.com",
       "username": "Amirsh",
       "password": "Amir123",
       "confirmPassword": "Amir123",
       "Orders": [],
-      "Basket": [
-        {
-          "id": "5",
-          "title": "сочный бургер",
-          "name": "Hot burger",
-          "imgPath": "/images/logo.webp",
-          "restaurant": "Choco chango",
-          "price": 140,
-          "count": 4
-        },
-        {
-          "id": "2",
-          "title": "сочный бургер",
-          "name": "Hamburger burger",
-          "imgPath": "/images/burgur.png",
-          "restaurant": "Choco chango",
-          "price": 150,
-          "count": 1
-        }
-      ]
-    },
-    {
-      "id": "3195",
-      "firstname": "amir23",
-      "username": "amir23",
-      "password": "amir23",
-      "confirmPassword": "amir23",
-      "Orders": [],
-      "Basket": [
-        {
-          "id": "2",
-          "title": "сочный бургер",
-          "name": "Hamburger burger",
-          "imgPath": "/images/burgur.png",
-          "restaurant": "Choco chango",
-          "price": 150,
-          "count": 4
-        },
-        {
-          "id": "4",
-          "title": "сочный бургер",
-          "name": "Chicken burger",
-          "imgPath": "/images/logo.webp",
-          "restaurant": "Choco chango",
-          "price": 150,
-          "count": 1
-        },
-        {
-          "id": "5",
-          "title": "сочный бургер",
-          "name": "Hot burger",
-          "imgPath": "/images/logo.webp",
-          "restaurant": "Choco chango",
-          "price": 140,
-          "count": 13
-        }
-      ]
+      "Basket": []
     }
   ]
 }

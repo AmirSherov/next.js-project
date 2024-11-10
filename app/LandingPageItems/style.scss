@@ -4,7 +4,6 @@ body{
 .landing-page-item {
    z-index: 400;
    width: 300px;
-   padding: 10px;
    height: 320px;
    border-radius: 20px;
    background: rgba(19, 18, 18, 0.1);
@@ -29,18 +28,21 @@ body{
    div:nth-child(2) {
       font-size: 25px;
       color: white;
-      width: 120%;
+      width: 100%;
+      text-align: center;
 
    }
 
    div:nth-child(3) {
       font-size: 15px;
       color: white;
+      text-align: center;
       width: 100%;
       height: auto;
    }
    div:nth-child(4) {
     font-size: 15px;
+    text-align: center;
     color: white;
     width: 100%;
     height: auto;
@@ -62,7 +64,7 @@ body{
       }
       margin-right: 30px;
       width: 250px;
-      height: 230px;
+      height: 300px;
    }
    @media (max-width:600px){
       width: 300px;

@@ -1,145 +1,86 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  transform: translateX(-120%); 
+  transition:cubic-bezier(.16,1.15,.87,.95)1s;
+  z-index: 1500;
 
-$fg:#444444;
-$bg:#009688;
-$pi:3.14;
-
-$menu-items:5;
-$open-distance:105px;
-$opening-angle:$pi*2;
-
-body{
-  background:$bg;
-  color:white;
-  text-align:center;
-}
-a{
-  color:inherit;
-}
-h1, h2, h3, h4{
-  margin:0;
-  margin-bottom:10px;
-  margin-top:10px;
-}
-h1{
-  font-size:3em;
-}
-%goo{
-  filter:url('#shadowed-goo');
-}
-%ball{
-  background:$fg;
-  border-radius:100%;
-  width:80px;
-  height:80px;
-  margin-left:-40px;
-  position:absolute;
-  top:20px;
-  color:white;
-  text-align:center;
-  line-height:80px;
-  transform:translate3d(0,0,0);
-  transition:transform ease-out 200ms;
-}
-.menu-open{
-  display:none;
-}
-.menu-item{
-  @extend %ball;
-  text-decoration: none;
-}
-.hamburger{
-  $width:25px;
-  $height:3px;
-  width:$width;
-  height:$height;
-  background:white;
-  display:block;
-  position:absolute;
-  top:50%;
-  left:50%;
-  margin-left:-$width/2;
-  margin-top:-$height/2;
-  transition:transform 200ms;
-}
-$hamburger-spacing:8px;
-.hamburger-1{
-  transform:translate3d(0,-$hamburger-spacing,0);
-}
-.hamburger-2{
-  transform:translate3d(0,0,0);
-}
-.hamburger-3{
-  transform:translate3d(0,$hamburger-spacing,0);
-}
-.menu-open:checked+.menu-open-button{
-  .hamburger-1{
-    transform:translate3d(0,0,0) rotate(45deg); 
+  &.open {
+    transform: translateX(0); 
   }
-  .hamburger-2{
-    transform:translate3d(0,0,0) scale(0.1,1);
-  }
-  .hamburger-3{
-    transform:translate3d(0,0,0) rotate(-45deg); 
-  }
-}
-.menu{
-  @extend %goo;
-  $width:100px;
-  $height:100px;
-  position:fixed;
-  left:20px;
-  z-index: 3000;
-  font-family: "Playwrite GB S", cursive;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  user-select: none;
-  font-style: normal;
-  top: 30px;
-  padding-left: 45px;
-  width:$width;
-  height:$height;
-  box-sizing:border-box;
-  font-size:20px;
-  text-align:left;
-}
 
-
-.menu-item{
-  &:hover{
-    background:white;
-    color:$fg;
+  .navigation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
-  @for $i from 1 through $menu-items{
-    &:nth-child(#{$i+2}){
-      transition-duration:180ms;
+
+  .navigation-logo {
+    margin-bottom: 20px;
+
+    img {
+      width: 120px;
+    }
+  }
+
+  .navigation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    .logout{
+      font-size: 15px;
+      text-wrap: wrap;
+    }
+    .navigation-item {
+      margin: 15px 0;
+     
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.4em;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #ff6347; 
+        }
+      }
     }
   }
 }
 
-.menu-open-button{
-  @extend %ball;
-  z-index:2;
-  transition-timing-function:cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  transition-duration:400ms;
-  transform:scale(1.1,1.1) translate3d(0,0,0);
-  cursor:pointer;
-}
-.menu-open-button:hover{
-  transform:scale(1.2,1.2) translate3d(0,0,0);
-}
-.menu-open:checked+.menu-open-button{
-  transition-timing-function:linear;
-  transition-duration:200ms;
-  transform:scale(0.8,0.8) translate3d(0,0,0);
-}
+.burger-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1600;
 
-.menu-open:checked~.menu-item{
-  transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  @for $i from 1 through $menu-items{
+  div {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+  }
 
-    &:nth-child(#{$i+2}){
-      transition-duration:90ms+(80ms*$i);
-      transform:translate3d((80px*$i),0,0);
+  &.open {
+    div:nth-child(1) {
+      transform: rotate(45deg) translate(7px, 5px);
+    }
+    div:nth-child(2) {
+      opacity: 0;
+    }
+    div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
   }
 }

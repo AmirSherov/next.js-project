@@ -9,7 +9,6 @@ body {
     user-select: none;
     font-style: normal;
 }
-
 .landing-page-main-container {
     justify-content: center;
     align-items: center;
@@ -21,7 +20,7 @@ body {
             display: flex;
             position: absolute;
             left: 32%;
-            top: 120px;
+            top: 100px;
             font-family: "Playwrite GB S", cursive;
             font-optical-sizing: auto;
             font-weight: weight;
@@ -116,6 +115,7 @@ body {
             justify-content: center;
             align-items: center;
             padding-left: 25px;
+            overflow: hidden;
         }
 
         @media(max-width:400px) {
@@ -124,7 +124,37 @@ body {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            padding-left:75px;
+            padding-left:30px;
         }
     }
 }
+.landing-page-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden; 
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    justify-content: center;
+    background-color: #33333300;
+    backdrop-filter: blur(20px);
+    align-items: center; 
+  }
+  
+  .slider-container {
+    display: flex;
+    width: auto;
+  }
+  
+  .slider-content {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .slider-content > div {
+    width: 100%; 
+    margin: 0 0px; 
+    flex-shrink: 0; 
+    text-align: center;
+  }
+  

@@ -12,7 +12,7 @@ export default function Login() {
     });
     const [existingUser, setExistingUser] = useState([]);
     const [registration, setRegistration] = useState({
-        firstname: "",
+        email: "",
         username: "",
         password: "",
         confirmPassword: "",
@@ -35,22 +35,23 @@ export default function Login() {
     }
 
     function handleLogin(e) {
-        e.preventDefault();  
+        e.preventDefault();
         const user = existingUser.find((user) => user.username === login.username && user.password === login.password);
         if (user) {
             toast.success("Login Successful");
             localStorage.setItem("userId", user.id);
+            localStorage.setItem("userEmail", user.email);
             setTimeout(() => {
                 window.location.href = "/";
-            }, 5000);
+            }, 2000);
         } else {
             toast.error("Login Failed");
         }
     }
 
     function registrationCheck(e) {
-        e.preventDefault(); 
-        const userExists = existingUser.some((user) => user.username === registration.username);
+        e.preventDefault();
+        const userExists = existingUser.some((user) => user.email === registration.email);
         if (userExists) {
             toast.error("Username already exists");
         } else if (registration.password !== registration.confirmPassword) {
@@ -59,6 +60,8 @@ export default function Login() {
             toast.error("Username should be more than 5 characters");
         } else if (registration.password.length <= 5) {
             toast.error("Password should be more than 5 characters");
+        } else if (!registration.email.includes("@gmail.com")) {
+            toast.error("Please enter a valid email");
         } else {
             registerUser();
         }
@@ -70,7 +73,7 @@ export default function Login() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ id: parseInt(Math.random()*10000), ...registration }),
+            body: JSON.stringify({ id: parseInt(Math.random() * 10000), ...registration }),
         });
         if (response.ok) {
             toast.success("Registration Successful");
@@ -152,9 +155,9 @@ export default function Login() {
                         <div className="form_back">
                             <div className="form_details">Sign Up</div>
                             <input
-                                type="text"
+                                type="emial"
                                 className="input"
-                                placeholder="First Name"
+                                placeholder="Email"
                                 required
                                 name="firstname"
                                 onChange={registrationChange}

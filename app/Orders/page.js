@@ -32,7 +32,7 @@ function Basket() {
     }, []);
 
     if (!basket || basket.length === 0) {
-        return <p>Empty orders section</p>;
+        return <p>Empty orders section.....</p>;
     }
 
     return (

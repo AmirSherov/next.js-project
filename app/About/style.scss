@@ -1,0 +1,326 @@
+body{
+    background: #121212;
+}
+.about-us-container {
+    color: #f0f0f0;
+    background: #121212;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+  
+    .intro {
+      text-align: center;
+      padding: 2rem 0;
+      
+      .intro-title {
+        font-size: 3rem;
+        color: #ffd700;
+        animation: fadeIn 2s ease;
+      }
+      
+      .intro-description {
+        font-size: 1.2rem;
+        color: #cccccc;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.5;
+        text-wrap: wrap;
+        opacity: 0;
+        animation: fadeIn 2s ease 0.5s forwards;
+      }
+    }
+  
+    .section-title {
+      font-size: 2.5rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      text-wrap: wrap;
+      text-align: center;
+      animation: slideIn 1.5s ease-out;
+    }
+  
+    .team {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0;
+  
+      .team-cards {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+  
+      .team-card {
+        background: #222;
+        border-radius: 10px;
+        padding: 1.5rem;
+        text-align: center;
+        width: 250px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s;
+        &:hover {
+          transform: translateY(-10px);
+        }
+  
+        .team-image {
+          border-radius: 50%;
+          width: 160px;
+          height: 160px;
+          background-size: cover;
+          margin-bottom: 1rem;
+          filter: grayscale(20%);
+          transition: filter 0.3s;
+          &:hover {
+            filter: grayscale(0%);
+          }
+        }
+  
+        .team-name {
+          color: #ffd700;
+          font-size: 1.2rem;
+        }
+  
+        .team-role {
+          font-size: 1rem;
+          color: #cccccc;
+          text-wrap: wrap;
+          margin-bottom: 0.5rem;
+        }
+  
+        .team-description {
+          font-size: 0.9rem;
+          text-wrap: wrap;
+          color: #bbbbbb;
+        }
+      }
+    }
+  
+    .values {
+      .values-list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-top: 2rem;
+        text-wrap: wrap;
+  
+        .value-item {
+          background: #222;
+          border-radius: 10px;
+          padding: 1.5rem;
+          width: 200px;
+          text-wrap: wrap;
+          text-align: center;
+          margin-bottom: 1rem;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  
+          h3 {
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+          }
+  
+          p {
+            color: #cccccc;
+          }
+        }
+      }
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+
+.team-section {
+    background-color: #121212;
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+
+.team-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #1e90ff;
+}
+.company-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background-color: #181818;
+    color: #fff;
+    position: relative;
+}
+
+.company-text {
+    max-width: 50%;
+}
+
+.company-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.company-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.company-video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.company-video-background {
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+}
+.contact-section {
+    padding: 4rem 2rem;
+    background-color: #232323;
+    color: #fff;
+    text-align: center;
+    text-wrap: wrap;
+  }
+  
+  .contact-btn {
+    background-color: #1e90ff;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .contact-btn:hover {
+    background-color: #3cb371;
+  }
+  
+  .contact-form-container {
+    margin-top: 2rem;
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #333;
+    text-wrap: wrap;
+    color: #fff;
+    transition: border-color 0.3s ease;
+  }
+   .contact-form textarea {
+        max-width: 400px;
+        max-height: 300px;
+   }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    text-wrap: wrap;
+    border-color: #1e90ff;
+  }
+  
+  .contact-form button {
+    padding: 12px 20px;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #3cb371;
+  }
+  
