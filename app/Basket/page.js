@@ -1,5 +1,4 @@
-
-'use client'
+'use client';
 import { useEffect, useState } from 'react';
 import "./style.scss";
 import { toast, Toaster } from "react-hot-toast";
@@ -8,10 +7,19 @@ function Basket() {
     const [userData, setUserData] = useState(null);
     const [basket, setBasket] = useState([]);
     const [total, setTotal] = useState(0);
-    const [userId, setUserId] = useState();
-    if (typeof window !== 'undefined') {
-        setUserId( localStorage.getItem('userId'))
-      }
+    const [userId, setUserId] = useState(null);
+
+    useEffect(() => {
+        const storedUserId = localStorage.getItem('userId');
+        setUserId(storedUserId);
+    }, []);
+
+
+    useEffect(() => {
+        if (userId) {
+            getProductsFromDataBase();
+        }
+    }, [userId]);
 
     async function getProductsFromDataBase() {
         try {
@@ -22,14 +30,9 @@ function Basket() {
                 setBasket(data.Basket);
             }
         } catch (error) {
-            toast.error("Error fetching user Data");
+            toast.error("Error fetching user data");
         }
     }
-
-    useEffect(() => {
-        getProductsFromDataBase();
-    }, []);
-
     useEffect(() => {
         if (basket.length > 0) {
             const newTotal = basket.reduce((sum, product) => sum + parseInt(product.price) * parseInt(product.count), 0);
@@ -42,13 +45,11 @@ function Basket() {
             const response = await fetch(`http://localhost:3000/Users/${userId}`);
             const user = await response.json();
             if (!user) {
-                toast.error("Пользователь не найден");
+                toast.error("User not found");
                 return;
             }
 
-
             const updatedBasket = user.Basket.filter(product => product.id !== productId);
-
             const updatedUser = { ...user, Basket: updatedBasket };
 
             await fetch(`http://localhost:3000/Users/${userId}`, {
@@ -104,7 +105,7 @@ function Basket() {
                     </div>
                 </div>
             ) : (
-                <h1>Basket is empty......</h1>
+                <h1>Basket is empty...</h1>
             )}
         </>
     );

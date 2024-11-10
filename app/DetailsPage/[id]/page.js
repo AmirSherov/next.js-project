@@ -1,17 +1,17 @@
 'use client';
 import "./style.scss";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import { toast, Toaster } from "react-hot-toast";
 
-function DetailsPage({ params: paramsPromise }) {
-    const params = use(paramsPromise);
-    const { id } = params;
+function DetailsPage({ params }) {
+    const { id } = params || {}; 
     const [existingProducts, setExistingProducts] = useState([]);
     const [product, setProduct] = useState(null);
     const [count, setCount] = useState(1);
     const [isButtonActive, setIsButtonActive] = useState(false);
     const [userId, setUserId] = useState(null);
 
+    
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const storedUserId = localStorage.getItem("userId");
@@ -19,45 +19,44 @@ function DetailsPage({ params: paramsPromise }) {
         }
     }, []);
 
+   
     useEffect(() => {
-        if (userId) getProductsFromDataBase();
+        if (userId) {
+            getProductsFromDataBase();
+        }
     }, [userId]);
 
+ 
     useEffect(() => {
-        if (!id) return;
-
-        async function fetchProduct() {
-            try {
-                const response = await fetch(`http://localhost:3000/DetailsProducts/${id}`);
-                if (!response.ok) {
-                    throw new Error("Failed to fetch product data");
+        if (id) {
+            async function fetchProduct() {
+                try {
+                    const response = await fetch(`http://localhost:3000/DetailsProducts/${id}`);
+                    if (!response.ok) {
+                        throw new Error("Failed to fetch product data");
+                    }
+                    const data = await response.json();
+                    setProduct(data);
+                } catch (error) {
+                    console.error("Error fetching product:", error);
                 }
-                const data = await response.json();
-                setProduct(data);
-            } catch (error) {
-                console.error("Error fetching product:", error);
             }
+            fetchProduct();
         }
-
-        fetchProduct();
     }, [id]);
 
     async function getProductsFromDataBase() {
         try {
             if (!userId) return;
-
             const response = await fetch(`http://localhost:3000/Users/${userId}`);
             const data = await response.json();
-            setExistingProducts(data.Basket);
+            setExistingProducts(data.Basket || []);
         } catch (error) {
             console.error("Error fetching basket data:", error);
         }
     }
 
-    if (!product) {
-        return <div>Loading...</div>;
-    }
-
+   
     function checkDataBase() {
         if (!userId) {
             toast.error("Please log in to add a product to the basket");
@@ -72,30 +71,36 @@ function DetailsPage({ params: paramsPromise }) {
         }
     }
 
+ 
     function setProductToDataBase() {
         const productWithCount = { ...product, count };
 
         fetch(`http://localhost:3000/Users/${userId}`, {
             method: "PATCH",
             headers: {
-              "Content-Type": "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({ Basket: [...existingProducts, productWithCount] }),
-          })
+        })
             .then((response) => response.json())
             .then(() => {
                 toast.success("The product is successfully added to the basket");
-                getProductsFromDataBase(); 
+                getProductsFromDataBase();
             })
-            .catch((error) => toast.error("Error adding product to the basket" , error));
+            .catch((error) => toast.error("Error adding product to the basket", error));
     }
 
+ 
     const handleButtonClick = () => {
         setIsButtonActive(true);
-        checkDataBase(); 
+        checkDataBase();
         setTimeout(() => setIsButtonActive(false), 300);
     };
-console.log(product.id)
+
+    if (!product) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <>
             <Toaster
