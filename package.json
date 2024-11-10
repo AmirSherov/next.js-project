@@ -15,12 +15,16 @@
     "concurrently": "^9.0.1",
     "emailjs-com": "^3.2.0",
     "json-server": "^1.0.0-beta.3",
-    "next": "15.0.1",
+    "next": "^13.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.3.0",
     "sass": "^1.80.4",
     "sweetalert2": "^11.14.5"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/AmirSherov/next.js-project.git",
+  "author": "AmirSherov <sher4mir@gmail.com>",
+  "license": "MIT"
 }
