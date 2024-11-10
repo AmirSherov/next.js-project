@@ -39,8 +39,10 @@ export default function Login() {
         const user = existingUser.find((user) => user.username === login.username && user.password === login.password);
         if (user) {
             toast.success("Login Successful");
+           if(typeof window !== "undefined") {
             localStorage.setItem("userId", user.id);
             localStorage.setItem("userEmail", user.email);
+           }
             setTimeout(() => {
                 window.location.href = "/";
             }, 2000);

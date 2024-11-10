@@ -4,9 +4,13 @@ import "./style.scss";
 
 function Basket() {
     const [basket, setBasket] = useState(null);
+    const [userId, setUserId] = useState(null);
 
     async function getProductsFromDataBase() {
-        const userId = localStorage.getItem("userId");
+        if(typeof window !== 'undefined') {
+            const userId = localStorage.getItem("userId");
+            setUserId(userId);
+        }
         
         
         if (!userId) {

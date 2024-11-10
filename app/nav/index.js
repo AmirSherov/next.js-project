@@ -21,24 +21,27 @@ function Nav() {
         setMenu(!menu);
     };
     useEffect(() => {
-        let userId = localStorage.getItem('userId');
-        let userEmail = localStorage.getItem('userEmail');
+        if (typeof window !== 'undefined') {
+            let userId = localStorage.getItem('userId');
+            let userEmail = localStorage.getItem('userEmail');
 
-        if (userEmail) {
-            setEmail(userEmail);
-            setIsLogin(true);
-        } else {
-            setEmail('');
-            setIsLogin(false);
+            if (userEmail) {
+                setEmail(userEmail);
+                setIsLogin(true);
+            } else {
+                setEmail('');
+                setIsLogin(false);
+            }
+
         }
-    }, [isLogin]);
+    }, []);
     function askPermission() {
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',
                 cancelButton: 'btn btn-danger'
             },
-            buttonsStyling: true 
+            buttonsStyling: true
         });
 
         swalWithBootstrapButtons.fire({

@@ -8,11 +8,13 @@ function Basket() {
     const [userData, setUserData] = useState(null);
     const [basket, setBasket] = useState([]);
     const [total, setTotal] = useState(0);
-    const userId = localStorage.getItem("userId");
+    const [userId, setUserId] = useState();
+    if (typeof window !== 'undefined') {
+        setUserId( localStorage.getItem('userId'))
+      }
 
     async function getProductsFromDataBase() {
         try {
-            const userId = parseInt(localStorage.getItem("userId"));
             const response = await fetch(`http://localhost:3000/Users/${userId}`);
             const data = await response.json();
             setUserData(data);

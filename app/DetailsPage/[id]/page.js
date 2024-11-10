@@ -13,8 +13,10 @@ function DetailsPage({ params: paramsPromise }) {
     const [userId, setUserId] = useState(null);
 
     useEffect(() => {
-        const storedUserId = localStorage.getItem("userId");
-        setUserId(storedUserId);
+        if (typeof window !== 'undefined') {
+            const storedUserId = localStorage.getItem("userId");
+            setUserId(storedUserId);
+        }
     }, []);
 
     useEffect(() => {
