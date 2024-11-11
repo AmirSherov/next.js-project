@@ -1,54 +1,109 @@
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+// .typing-effect {
+//     font-family: "Playwrite GB S", cursive;
+//     font-optical-sizing: auto;
+//     font-weight: weight;
+//     font-style: normal;
+//     font-size: 40px;
+//     white-space: nowrap;
+//     overflow: hidden; 
+//     position: relative;
+//     left: 33%;
+//     font-weight: 600;
+//     top: 250px;
+//     color: white;
+//     text-align: center;
+//     z-index: 500;
+//     width: 450px;
+//     height: auto;
+//     .cursor{
+//         animation: cursor-blink 0.8s infinite;
+//         color: black;
+//     }
+//     @media (max-width:700px) {
+//         left: 24%;
+//         font-size: 30px;
+//         width: 300px;
+//     }
+//     @media (max-width:500px) {
+//         left: 18%;
+//         font-size: 30px;
+//         width: 300px;
+//     }
+//     @media (max-width:420px) {
+//         left: 16%;
+//         font-size: 25px;
+//         width: 260px;
+//         top: 150px;
+//     }
+//     @media (max-width:360px) {
+//         left: 18%;
+//         font-size: 20px;
+//         width: 200px;
+//     }
+
+// }
+// @keyframes cursor-blink {
+//     0%, 100% {
+//         opacity: 1; 
+//     }
+//     50% {
+//         opacity: 0;
+//     }
+// }
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
 .typing-effect {
     font-family: "Playwrite GB S", cursive;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    font-size: 40px;
-    white-space: nowrap;
-    overflow: hidden; 
-    position: relative;
-    left: 33%;
     font-weight: 600;
-    top: 250px;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: 40px;
     color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     z-index: 500;
     width: 450px;
     height: auto;
-    .cursor{
+
+    .cursor {
         animation: cursor-blink 0.8s infinite;
         color: black;
     }
-    @media (max-width:700px) {
-        left: 24%;
+
+    @media (max-width: 700px) {
         font-size: 30px;
         width: 300px;
     }
-    @media (max-width:500px) {
-        left: 18%;
+
+    @media (max-width: 500px) {
         font-size: 30px;
         width: 300px;
     }
-    @media (max-width:420px) {
-        left: 16%;
+
+    @media (max-width: 420px) {
         font-size: 25px;
         width: 260px;
-        top: 150px;
+        top: 230px;
     }
-    @media (max-width:360px) {
-        left: 18%;
+
+    @media (max-width: 360px) {
         font-size: 20px;
         width: 200px;
     }
-
 }
+
 @keyframes cursor-blink {
     0%, 100% {
-        opacity: 1; 
+        opacity: 1;
     }
     50% {
         opacity: 0;
     }
 }
-
