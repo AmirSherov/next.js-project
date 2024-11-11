@@ -182,6 +182,25 @@
       "confirmPassword": "Amir123",
       "Orders": [],
       "Basket": []
+    },
+    {
+      "id": "883",
+      "email": "Amir@gmail.com",
+      "username": "AmirSH",
+      "password": "Amir12345",
+      "confirmPassword": "Amir12345",
+      "Orders": [],
+      "Basket": [
+        {
+          "id": "2",
+          "title": "сочный бургер",
+          "name": "Hamburger burger",
+          "imgPath": "/images/burgur.png",
+          "restaurant": "Choco chango",
+          "price": 150,
+          "count": 1
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,91 @@
+// Стиль для страницы конфиденциальности
+$primary-color: #000; // Черный
+$secondary-color: #FFD700; // Желтый
+$font-family: 'Roboto', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    background-color: $primary-color;
+    color: #fff;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    background-color: $primary-color;
+    
+    .header-container {
+        display: flex;
+        align-items: center;
+        
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: $secondary-color;
+            font-weight: 500;
+        }
+    }
+}
+
+.privacy-policy-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+}
+
+.privacy-policy-header {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: 2.5rem;
+        color: $secondary-color;
+        font-weight: 600;
+    }
+}
+
+.privacy-policy-body {
+    h3 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+        color: $secondary-color;
+        font-weight: 500;
+    }
+
+    p, ul {
+        font-size: 1rem;
+        color: #ccc;
+        line-height: 1.6;
+    }
+
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+}
+
+a {
+    color: $secondary-color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

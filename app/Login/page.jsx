@@ -6,7 +6,6 @@ import { toast, Toaster } from "react-hot-toast"
 export default function Login() {
     const [isSignup, setIsSignup] = useState(false);
     const [login, setLogin] = useState({
-        firstname: "",
         username: "",
         password: ""
     });
@@ -161,7 +160,7 @@ export default function Login() {
                                 className="input"
                                 placeholder="Email"
                                 required
-                                name="firstname"
+                                name="email"
                                 onChange={registrationChange}
                             />
                             <input

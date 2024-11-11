@@ -26,5 +26,10 @@
   "main": "index.js",
   "repository": "https://github.com/AmirSherov/next.js-project.git",
   "author": "AmirSherov <sher4mir@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "typescript": "^5.6.3"
+  }
 }
