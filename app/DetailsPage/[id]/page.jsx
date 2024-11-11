@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import "./style.scss";
 import { useState, useEffect } from "react";
 import { toast, Toaster } from "react-hot-toast";
