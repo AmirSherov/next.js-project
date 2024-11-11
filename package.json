@@ -22,7 +22,7 @@
     "sass": "^1.80.4",
     "sweetalert2": "^11.14.5"
   },
-  "main": "index.js",
+  "main": "page.jsx",
   "repository": "https://github.com/AmirSherov/next.js-project.git",
   "author": "AmirSherov <sher4mir@gmail.com>",
   "license": "MIT",
